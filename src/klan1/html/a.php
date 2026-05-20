@@ -1,13 +1,22 @@
 <?php
 
+/**
+ * @author Alejandro Trujillo J. <https://klan1.com>
+ */
+
 namespace k1lib\html;
 
+/**
+ * HTML <a> anchor element
+ *
+ * @author Alejandro Trujillo J. <https://klan1.com>
+ */
 class a extends tag {
 
     use append_shotcuts;
 
     function __construct($href, $label, $target = NULL, $class = NULL, $id = NULL) {
-        parent::__construct("a", FALSE);
+        parent::__construct("a", IS_NOT_SELF_CLOSED);
         if (!empty($href)) {
             $this->set_attrib("href", $href);
         }

@@ -1,16 +1,25 @@
 <?php
 
+/**
+ * @author Alejandro Trujillo J. <https://klan1.com>
+ */
+
 namespace k1lib\html;
 
 /**
- * P
+ * HTML <fieldset> element
+ *
+ * @author Alejandro Trujillo J. <https://klan1.com>
  */
 class fieldset extends tag {
 
     use append_shotcuts;
 
+    /**
+     * @param string $legend
+     */
     function __construct($legend) {
-        parent::__construct("fieldset", FALSE);
+        parent::__construct("fieldset", IS_NOT_SELF_CLOSED);
         $this->set_class("fieldset");
         $legend = new legend($legend);
         $this->append_child($legend);

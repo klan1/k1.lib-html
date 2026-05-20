@@ -1,20 +1,21 @@
 <?php
 
+/**
+ * @author Alejandro Trujillo J. <https://klan1.com>
+ */
+
 namespace k1lib\html;
 
 /**
- * This is the body of HTML document 
- *  <body>
- *      <section id='k1lib-header'></section>
- *      <section id='k1lib-content'></section>
- *      <section id='k1lib-footer'></section>
- *  </body>
+ * HTML <body> element
+ *
+ * @author Alejandro Trujillo J. <https://klan1.com>
  */
 class body extends tag {
 
     use append_shotcuts;
 
     function __construct() {
-        parent::__construct("body", FALSE);
+        parent::__construct("body", IS_NOT_SELF_CLOSED);
     }
 }

@@ -1,19 +1,26 @@
 <?php
 
+/**
+ * @author Alejandro Trujillo J. <https://klan1.com>
+ */
+
 namespace k1lib\html;
 
+/**
+ * HTML <table> element
+ *
+ * @author Alejandro Trujillo J. <https://klan1.com>
+ */
 class table extends tag {
 
     use append_shotcuts;
 
-//    private $data_array = array();
-
     /**
-     * @param string $class
-     * @param string $id
+     * @param string|null $class
+     * @param string|null $id
      */
     function __construct($class = NULL, $id = NULL) {
-        parent::__construct("table", FALSE);
+        parent::__construct("table", IS_NOT_SELF_CLOSED);
 //        $this->data_array &= $data_array;
         $this->set_class($class, TRUE);
         $this->set_id($id);

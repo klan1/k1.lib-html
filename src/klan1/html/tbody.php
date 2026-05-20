@@ -1,17 +1,26 @@
 <?php
 
+/**
+ * @author Alejandro Trujillo J. <https://klan1.com>
+ */
+
 namespace k1lib\html;
 
+/**
+ * HTML <tbody> element
+ *
+ * @author Alejandro Trujillo J. <https://klan1.com>
+ */
 class tbody extends tag {
 
     use append_shotcuts;
 
     /**
-     * @param string $class
-     * @param string $id
+     * @param string|null $class
+     * @param string|null $id
      */
     function __construct($class = NULL, $id = NULL) {
-        parent::__construct("tbody", FALSE);
+        parent::__construct("tbody", IS_NOT_SELF_CLOSED);
         $this->set_class($class, TRUE);
         $this->set_id($id);
     }

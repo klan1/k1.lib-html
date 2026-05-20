@@ -1,6 +1,6 @@
-# k1lib.html
+# k1.lib-html
 
-A comprehensive PHP library for generating HTML documents and components using an object-oriented approach. This package is a modular extraction of the HTML generation tools from the main `k1lib` library.
+A comprehensive PHP library for generating HTML documents and components using an object-oriented approach. This package is a modular extraction of the HTML generation tools from the main `k1.lib` library.
 
 ## Features
 
@@ -16,7 +16,7 @@ A comprehensive PHP library for generating HTML documents and components using a
 Install via Composer:
 
 ```bash
-composer require klan1/k1lib.html
+composer require klan1/k1.lib-html
 ```
 
 ## Quick Start

@@ -3,14 +3,16 @@
 namespace k1lib\html;
 
 /**
- * h6
+ * HTML <h6> heading element
+ *
+ * @author Alejandro Trujillo J. <https://klan1.com>
  */
 class h6 extends tag {
 
     use append_shotcuts;
 
     function __construct($value = NULL, $class = NULL, $id = NULL) {
-        parent::__construct("h6", FALSE);
+        parent::__construct("h6", IS_NOT_SELF_CLOSED);
         $this->set_value($value);
         $this->set_class($class);
         $this->set_id($id);

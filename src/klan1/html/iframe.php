@@ -1,11 +1,25 @@
 <?php
 
+/**
+ * @author Alejandro Trujillo J. <https://klan1.com>
+ */
+
 namespace k1lib\html;
 
+/**
+ * HTML <iframe> inline frame element
+ *
+ * @author Alejandro Trujillo J. <https://klan1.com>
+ */
 class iframe extends tag {
 
     use append_shotcuts;
 
+    /**
+     * @param string $src
+     * @param string|null $class
+     * @param string|null $id
+     */
     function __construct($src, $class = NULL, $id = NULL) {
         parent::__construct("iframe", IS_NOT_SELF_CLOSED);
         $this->set_value($src);

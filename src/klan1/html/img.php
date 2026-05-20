@@ -1,13 +1,28 @@
 <?php
 
+/**
+ * @author Alejandro Trujillo J. <https://klan1.com>
+ */
+
 namespace k1lib\html;
 
+/**
+ * HTML <img> element
+ *
+ * @author Alejandro Trujillo J. <https://klan1.com>
+ */
 class img extends tag {
 
     use append_shotcuts;
 
+    /**
+     * @param string|null $src
+     * @param string $alt
+     * @param string|null $class
+     * @param string|null $id
+     */
     function __construct($src = NULL, $alt = "Image", $class = NULL, $id = NULL) {
-        parent::__construct("img", TRUE);
+        parent::__construct("img", IS_SELF_CLOSED);
         $this->set_attrib("src", $src);
         $this->set_attrib("alt", $alt);
         $this->set_class($class, TRUE);

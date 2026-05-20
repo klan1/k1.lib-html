@@ -1,16 +1,22 @@
 <?php
 
+/**
+ * @author Alejandro Trujillo J. <https://klan1.com>
+ */
+
 namespace k1lib\html;
 
 /**
  * This is the main object that will holds all the HTML document.
- * <html>  
+ *
+ * @author Alejandro Trujillo J. <https://klan1.com>
+ * <html>
  *  <head>
  *      <title></title>
  *  </head>
  *  <body>
  *  </body>
- * </html> 
+ * </html>
  */
 class html_document extends tag {
 
@@ -27,7 +33,7 @@ class html_document extends tag {
     protected body $body;
 
     function __construct($lang = "en", $default_head = false, $default_body = false) {
-        parent::__construct("html", FALSE);
+        parent::__construct("html", IS_NOT_SELF_CLOSED);
 
         parent::$root = $this;
 

@@ -1,7 +1,16 @@
 <?php
 
+/**
+ * @author Alejandro Trujillo J. <https://klan1.com>
+ */
+
 namespace k1lib\html;
 
+/**
+ * Template loading system
+ *
+ * @author Alejandro Trujillo J. <https://klan1.com>
+ */
 class template {
 
     /**

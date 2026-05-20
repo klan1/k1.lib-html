@@ -1,11 +1,15 @@
 <?php
 
+/**
+ * @author Alejandro Trujillo J. <https://klan1.com>
+ */
+
 namespace k1lib\html;
 
 /**
- *  <head>
- *      <title></title>
- *  </head>
+ * HTML <head> element
+ *
+ * @author Alejandro Trujillo J. <https://klan1.com>
  */
 class head extends tag {
 
@@ -17,7 +21,7 @@ class head extends tag {
     protected $title;
 
     function __construct() {
-        parent::__construct("head", FALSE);
+        parent::__construct("head", IS_NOT_SELF_CLOSED);
         $this->append_title();
     }
 

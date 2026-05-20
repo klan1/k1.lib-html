@@ -1,18 +1,27 @@
 <?php
 
+/**
+ * @author Alejandro Trujillo J. <https://klan1.com>
+ */
+
 namespace k1lib\html;
 
+/**
+ * HTML <td> table data cell element
+ *
+ * @author Alejandro Trujillo J. <https://klan1.com>
+ */
 class td extends tag {
 
     use append_shotcuts;
 
     /**
      * @param string $value <TAG>$value</TAG>
-     * @param string $class
-     * @param string $id
+     * @param string|null $class
+     * @param string|null $id
      */
     function __construct($value, $class = NULL, $id = NULL) {
-        parent::__construct("td", FALSE);
+        parent::__construct("td", IS_NOT_SELF_CLOSED);
         $this->set_value($value);
         $this->set_class($class, TRUE);
         $this->set_id($id);

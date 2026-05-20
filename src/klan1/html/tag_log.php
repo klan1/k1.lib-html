@@ -1,9 +1,15 @@
 <?php
 
+/**
+ * @author Alejandro Trujillo J. <https://klan1.com>
+ */
+
 namespace k1lib\html;
 
 /**
- * Static Class to log all the Class tag actions 
+ * Static Class to log all the Class tag actions
+ *
+ * @author Alejandro Trujillo J. <https://klan1.com>
  */
 class tag_log {
 

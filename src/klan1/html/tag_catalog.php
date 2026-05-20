@@ -1,9 +1,15 @@
 <?php
 
+/**
+ * @author Alejandro Trujillo J. <https://klan1.com>
+ */
+
 namespace k1lib\html;
 
 /**
  * Holds all the tags created with the tag Class.
+ *
+ * @author Alejandro Trujillo J. <https://klan1.com>
  */
 class tag_catalog {
 

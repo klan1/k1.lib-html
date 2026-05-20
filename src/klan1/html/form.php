@@ -1,16 +1,22 @@
 <?php
 
+/**
+ * @author Alejandro Trujillo J. <https://klan1.com>
+ */
+
 namespace k1lib\html;
 
 /**
- * FORM
+ * HTML <form> element
+ *
+ * @author Alejandro Trujillo J. <https://klan1.com>
  */
 class form extends tag {
 
     use append_shotcuts;
 
     function __construct($id = "k1lib-form") {
-        parent::__construct("form", FALSE);
+        parent::__construct("form", IS_NOT_SELF_CLOSED);
         $this->set_id($id);
         $this->set_attrib("name", "k1lib-form");
         $this->set_attrib("method", "post");

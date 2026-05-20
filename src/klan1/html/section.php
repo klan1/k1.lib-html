@@ -1,13 +1,26 @@
 <?php
 
+/**
+ * @author Alejandro Trujillo J. <https://klan1.com>
+ */
+
 namespace k1lib\html;
 
+/**
+ * HTML <section> element
+ *
+ * @author Alejandro Trujillo J. <https://klan1.com>
+ */
 class section extends tag {
 
     use append_shotcuts;
 
+    /**
+     * @param string|null $id
+     * @param string|null $class
+     */
     function __construct($id = NULL, $class = NULL) {
-        parent::__construct("section", FALSE);
+        parent::__construct("section", IS_NOT_SELF_CLOSED);
         if (!empty($id)) {
             $this->set_attrib("id", $id);
         }

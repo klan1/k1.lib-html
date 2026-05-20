@@ -1,7 +1,16 @@
 <?php
 
+/**
+ * @author Alejandro Trujillo J. <https://klan1.com>
+ */
+
 namespace k1lib\html;
 
+/**
+ * HTML <option> element
+ *
+ * @author Alejandro Trujillo J. <https://klan1.com>
+ */
 class option extends tag {
 
     use append_shotcuts;
@@ -10,11 +19,11 @@ class option extends tag {
      * @param string $value <TAG value='$value' />
      * @param string $label <TAG>$label</TAG>
      * @param bool $selected
-     * @param string $class
-     * @param string $id
+     * @param string|null $class
+     * @param string|null $id
      */
     function __construct($value, $label, $selected = FALSE, $class = NULL, $id = NULL) {
-        parent::__construct("option", FALSE);
+        parent::__construct("option", IS_NOT_SELF_CLOSED);
         $this->set_value($label);
         $this->set_attrib("value", $value);
         if ($selected) {

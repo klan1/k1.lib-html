@@ -1,18 +1,28 @@
 <?php
 
+/**
+ * @author Alejandro Trujillo J. <https://klan1.com>
+ */
+
 namespace k1lib\html;
 
+/**
+ * HTML <ol> ordered list element
+ *
+ * @author Alejandro Trujillo J. <https://klan1.com>
+ */
 class ol extends tag {
 
     use append_shotcuts;
 
     /**
-     * Create a UL html tag.
-     * @param string $class
-     * @param string $id
+     * Create a OL html tag.
+     *
+     * @param string|null $class
+     * @param string|null $id
      */
     function __construct($class = NULL, $id = NULL) {
-        parent::__construct("ol", FALSE);
+        parent::__construct("ol", IS_NOT_SELF_CLOSED);
 //        $this->data_array &= $data_array;
         $this->set_class($class, TRUE);
         $this->set_id($id);

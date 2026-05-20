@@ -1,12 +1,24 @@
 <?php
+
 /**
- * Created by gemma4:31b - 2026-04-28 17:58:54
+ * @author Alejandro Trujillo J. <https://klan1.com>
  */
 
 namespace k1lib\html;
 
+/**
+ * HTML <em> emphasis element
+ *
+ * @author Alejandro Trujillo J. <https://klan1.com>
+ */
 class em extends tag {
+
     use append_shotcuts;
+
+    /**
+     * @param string|null $class
+     * @param string|null $id
+     */
     function __construct($class = NULL, $id = NULL) {
         parent::__construct("em", IS_NOT_SELF_CLOSED);
         $this->set_class($class, TRUE);

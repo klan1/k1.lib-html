@@ -3,8 +3,7 @@
 /**
  * On screen solution for show messages to user.
  *
- * @author J0hnD03 <alejandro.trujillo@klan1.com>
- * @version 1.0
+ * @author Alejandro Trujillo J. <https://klan1.com>
  * @package notifications
  */
 

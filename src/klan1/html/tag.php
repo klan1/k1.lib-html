@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * @author Alejandro Trujillo J. <https://klan1.com>
+ */
+
 namespace k1lib\html;
 
 const IS_SELF_CLOSED = TRUE;
@@ -18,6 +22,8 @@ const INSERT_ON_POST_TAG = 1;
 
 /**
  * HTML Tag abstraction
+ *
+ * @author Alejandro Trujillo J. <https://klan1.com>
  */
 class tag {
 

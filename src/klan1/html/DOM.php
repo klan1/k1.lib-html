@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * @author Alejandro Trujillo J. <https://klan1.com>
+ */
+
 namespace k1lib\html;
 
 /**
@@ -8,7 +12,9 @@ namespace k1lib\html;
  */
 
 /**
- * Static Class that holds the first tag Object <html></html>. 
+ * Static Class that holds the first tag Object <html></html>.
+ *
+ * @author Alejandro Trujillo J. <https://klan1.com>
  */
 class DOM {
 //    use append_shotcuts;

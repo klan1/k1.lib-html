@@ -4,6 +4,8 @@ namespace k1lib\html;
 
 /**
  * Common tag Objects append operations
+ *
+ * @author Alejandro Trujillo J. <https://klan1.com>
  */
 trait append_shotcuts {
 

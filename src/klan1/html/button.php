@@ -1,13 +1,28 @@
 <?php
 
+/**
+ * @author Alejandro Trujillo J. <https://klan1.com>
+ */
+
 namespace k1lib\html;
 
+/**
+ * HTML <button> element
+ *
+ * @author Alejandro Trujillo J. <https://klan1.com>
+ */
 class button extends tag {
 
     use append_shotcuts;
 
+    /**
+     * @param string|null $value
+     * @param string|null $class
+     * @param string|null $id
+     * @param string $type
+     */
     function __construct($value = NULL, $class = NULL, $id = NULL, $type = "button") {
-        parent::__construct("button", FALSE);
+        parent::__construct("button", IS_NOT_SELF_CLOSED);
         $this->set_value($value);
         $this->set_class($class);
         $this->set_id($id);
