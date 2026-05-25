@@ -12,7 +12,7 @@ $body = $doc->body();
 $body->set_class("container mt-4");
 $body->append_h1("Inline Tags Example");
 
-$link = new \k1lib\html\a("https://klan1.com", "Klan1 Labs");
+$link = new \k1lib\html\a("https://github.com/j0hnd03", "Klan1 Labs");
 $strong = new \k1lib\html\strong("important");
 $em = new \k1lib\html\em("emphasized");
 $code = new \k1lib\html\code("echo 'Hello';");

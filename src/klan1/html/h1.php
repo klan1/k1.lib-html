@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @author Alejandro Trujillo J. <https://klan1.com>
+ * @author Alejandro Trujillo J. <https://github.com/j0hnd03>
  */
 
 namespace k1lib\html;
@@ -9,7 +9,7 @@ namespace k1lib\html;
 /**
  * HTML <h1> heading element
  *
- * @author Alejandro Trujillo J. <https://klan1.com>
+ * @author Alejandro Trujillo J. <https://github.com/j0hnd03>
  */
 class h1 extends tag {
 

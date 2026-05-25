@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @author Alejandro Trujillo J. <https://klan1.com>
+ * @author Alejandro Trujillo J. <https://github.com/j0hnd03>
  */
 
 namespace k1lib\html;
@@ -9,7 +9,7 @@ namespace k1lib\html;
 /**
  * Holds all the tags created with the tag Class.
  *
- * @author Alejandro Trujillo J. <https://klan1.com>
+ * @author Alejandro Trujillo J. <https://github.com/j0hnd03>
  */
 class tag_catalog {
 

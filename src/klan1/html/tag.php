@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @author Alejandro Trujillo J. <https://klan1.com>
+ * @author Alejandro Trujillo J. <https://github.com/j0hnd03>
  */
 
 namespace k1lib\html;
@@ -23,7 +23,7 @@ const INSERT_ON_POST_TAG = 1;
 /**
  * HTML Tag abstraction
  *
- * @author Alejandro Trujillo J. <https://klan1.com>
+ * @author Alejandro Trujillo J. <https://github.com/j0hnd03>
  */
 class tag {
 

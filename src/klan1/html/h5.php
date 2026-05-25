@@ -5,7 +5,7 @@ namespace k1lib\html;
 /**
  * HTML <h5> heading element
  *
- * @author Alejandro Trujillo J. <https://klan1.com>
+ * @author Alejandro Trujillo J. <https://github.com/j0hnd03>
  */
 class h5 extends tag {
 
