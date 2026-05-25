@@ -76,7 +76,7 @@ $next_file = $current_index < count($components_list) - 1 ? array_keys($componen
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $component_name ?? 'Tag' ?> - k1.lib-html - Tags</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
     <style>
         :root { --bs-body-bg: #f8f9fa; }
         body { padding-top: 70px; background-color: var(--bs-body-bg); }
@@ -165,16 +165,6 @@ $next_file = $current_index < count($components_list) - 1 ? array_keys($componen
             </div>
         </div>
     </nav>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <a href="../index.php" class="back-link">
-                    <i class="bi bi-arrow-left me-1"></i> All Tags
-                </a>
-            </div>
-        </div>
-    </div>
 
     <div class="nav-buttons">
         <?php if ($prev_file): ?>
