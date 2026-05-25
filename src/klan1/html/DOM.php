@@ -8,6 +8,8 @@ namespace k1lib\html;
 
 /**
  * Static Class that holds the first tag Object <html></html>.
+ * This is a helper to have a global access to the HTML page is been
+ * generated, developer could use or not.
  *
  * @author Alejandro Trujillo J. <https://github.com/j0hnd03>
  */

@@ -1,2 +1,2 @@
-# Exclude DOM.php compatibility wrapper from analysis
-src/klan1/html/DOM.php
+# .understandignore — files/dirs excluded from analysis
+# Syntax: same as .gitignore

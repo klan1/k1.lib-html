@@ -2,1555 +2,1347 @@
   "version": "1.0.0",
   "project": {
     "name": "k1.lib-html",
-    "languages": ["php", "markdown", "json", "shell"],
-    "frameworks": [],
-    "description": "PHP 8.2+ library for generating HTML documents using an object-oriented, DOM-like approach",
-    "analyzedAt": "2026-05-25T01:07:00.000Z",
-    "gitCommitHash": "3e4756ae2ffb589c8031af54729044583b661c3e"
+    "languages": [
+      "php"
+    ],
+    "description": "PHP 8.2+ library for generating HTML documents with OOP DOM-like approach",
+    "analyzedAt": "2026-05-25T02:10:00.000Z",
+    "gitCommitHash": "778cd89ab48195ffaf0341cbb8c46a66ce944d57",
+    "frameworks": []
   },
   "nodes": [
     {
-      "id": "file-tag-php",
+      "id": "file:src/klan1/html/tag.php",
       "type": "file",
       "name": "tag.php",
       "filePath": "src/klan1/html/tag.php",
-      "summary": "Base class for all HTML elements. Manages attributes, child collections, inline tag resolution, and HTML generation. Every tag instance is registered in tag_catalog and receives a unique ID. Contains constants for self-closing behavior, append positions, and insert positions. Uses append_shotcuts trait.",
-      "tags": [
-        "core",
-        "base-class",
-        "html-generation"
-      ]
-    },
-    {
-      "id": "file-html_document-php",
-      "type": "file",
-      "name": "html_document.php",
-      "filePath": "src/klan1/html/html_document.php",
-      "summary": "Root HTML element that extends tag. Automatically creates head and body children. Sets tag::$root to itself. Represents the full HTML document structure.",
-      "tags": [
-        "core",
-        "document-root"
-      ]
-    },
-    {
-      "id": "file-DOM-php",
-      "type": "file",
-      "name": "DOM.php",
-      "filePath": "src/klan1/html/DOM.php",
-      "summary": "Static compatibility wrapper for k1lib v1 code. Provides static methods to start, manage, and generate HTML documents. Acts as a facade for html_document.",
-      "tags": [
-        "compatibility",
-        "static",
-        "wrapper"
-      ]
-    },
-    {
-      "id": "file-tag_catalog-php",
-      "type": "file",
-      "name": "tag_catalog.php",
-      "filePath": "src/klan1/html/tag_catalog.php",
-      "summary": "Static registry that assigns unique IDs to all tag instances. Enables inline tag embedding and object lookup by ID. Provides increase(), get_by_index(), index_exist(), decatalog() methods.",
-      "tags": [
-        "registry",
-        "static",
-        "id-management"
-      ]
-    },
-    {
-      "id": "file-tag_log-php",
-      "type": "file",
-      "name": "tag_log.php",
-      "filePath": "src/klan1/html/tag_log.php",
-      "summary": "Optional global action logger. Enabled via html_document::set_use_log(true). Logs tag creation, cloning, appending, and generation operations.",
-      "tags": [
-        "logging",
-        "debugging"
-      ]
-    },
-    {
-      "id": "file-append_shotcuts-php",
-      "type": "file",
-      "name": "append_shotcuts.php",
-      "filePath": "src/klan1/html/append_shotcuts.php",
-      "summary": "Trait that provides fluent append methods (append_div, append_p, append_span, etc.) on any tag. Allows method chaining for child element creation.",
-      "tags": [
-        "trait",
-        "fluent-api",
-        "convenience"
-      ]
-    },
-    {
-      "id": "file-template-php",
-      "type": "file",
-      "name": "template.php",
-      "filePath": "src/klan1/html/template.php",
-      "summary": "Static class for loading PHP template files from a configured directory. Provides enable(), load_template(), template_exist() methods.",
-      "tags": [
-        "template",
-        "static",
-        "file-loading"
-      ]
-    },
-    {
-      "id": "class-tag",
-      "type": "class",
-      "name": "tag",
-      "filePath": "src/klan1/html/tag.php",
-      "summary": "Core HTML tag abstraction class. Manages attributes, child collections (head, main, tail), inline tag resolution, and HTML generation. All HTML elements inherit from this class.",
+      "summary": "Base class for all HTML elements. Manages attributes, child collections, inline tag resolution, and HTML generation.",
       "tags": [
         "core",
         "base-class"
       ]
     },
     {
-      "id": "class-html_document",
-      "type": "class",
-      "name": "html_document",
+      "id": "file:src/klan1/html/html_document.php",
+      "type": "file",
+      "name": "html_document.php",
       "filePath": "src/klan1/html/html_document.php",
-      "summary": "Root HTML document class extending tag. Creates head and body children automatically. Provides head() and body() accessor methods.",
+      "summary": "Root document with auto charset and viewport injection on generate()",
       "tags": [
-        "document",
-        "root"
+        "core",
+        "document-root"
       ]
     },
     {
-      "id": "class-DOM",
-      "type": "class",
-      "name": "DOM",
+      "id": "file:src/klan1/html/head.php",
+      "type": "file",
+      "name": "head.php",
+      "filePath": "src/klan1/html/head.php",
+      "summary": "HTML head element with title, meta, link and script helpers.",
+      "tags": [
+        "core",
+        "document-structure"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/body.php",
+      "type": "file",
+      "name": "body.php",
+      "filePath": "src/klan1/html/body.php",
+      "summary": "HTML body element.",
+      "tags": [
+        "core",
+        "document-structure"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/DOM.php",
+      "type": "file",
+      "name": "DOM.php",
       "filePath": "src/klan1/html/DOM.php",
-      "summary": "Static compatibility wrapper for k1lib v1. Provides static methods for HTML document management: start(), end(), html(), html_document(), generate().",
+      "summary": "Static compatibility wrapper for k1lib v1 code.",
       "tags": [
         "compatibility",
-        "static"
+        "v1",
+        "deprecated"
       ]
     },
     {
-      "id": "class-tag_catalog",
-      "type": "class",
-      "name": "tag_catalog",
-      "filePath": "src/klan1/html/tag_catalog.php",
-      "summary": "Static registry for tag instances. Manages unique ID assignment and lookup. Key methods: increase(), get_by_index(), index_exist(), decatalog(), get_catalog().",
-      "tags": [
-        "registry",
-        "static"
-      ]
-    },
-    {
-      "id": "class-append_shotcuts",
-      "type": "class",
-      "name": "append_shotcuts",
+      "id": "file:src/klan1/html/append_shotcuts.php",
+      "type": "file",
+      "name": "append_shotcuts.php",
       "filePath": "src/klan1/html/append_shotcuts.php",
-      "summary": "Trait providing fluent child appending methods: append_div(), append_p(), append_span(), append_ul(), append_li(), append_i(), append_pre(), append_a(), append_img(), append_h1()-append_h6(), append_label().",
+      "summary": "Trait providing fluent append methods (append_div, append_p, append_span, etc.)",
       "tags": [
         "trait",
         "fluent-api"
       ]
     },
     {
-      "id": "class-template",
-      "type": "class",
-      "name": "template",
+      "id": "file:src/klan1/html/tag_catalog.php",
+      "type": "file",
+      "name": "tag_catalog.php",
+      "filePath": "src/klan1/html/tag_catalog.php",
+      "summary": "Static registry assigning unique IDs to tag instances.",
+      "tags": [
+        "registry",
+        "id-management"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/tag_log.php",
+      "type": "file",
+      "name": "tag_log.php",
+      "filePath": "src/klan1/html/tag_log.php",
+      "summary": "Optional global action logger.",
+      "tags": [
+        "logging",
+        "debugging"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/template.php",
+      "type": "file",
+      "name": "template.php",
       "filePath": "src/klan1/html/template.php",
-      "summary": "Static template loading system. Enables template engine, loads PHP templates from configured path. Methods: enable(), is_enabled(), load_template(), template_exist(), error_500().",
+      "summary": "Static class for loading PHP templates.",
       "tags": [
         "template",
         "static"
       ]
     },
     {
-      "id": "class-div",
-      "type": "class",
-      "name": "div",
-      "filePath": "src/klan1/html/div.php",
-      "summary": "HTML <div> element. Extends tag, uses append_shotcuts trait. Constructor accepts optional class and id parameters.",
-      "tags": [
-        "html-element",
-        "block"
-      ]
-    },
-    {
-      "id": "class-span",
-      "type": "class",
-      "name": "span",
-      "filePath": "src/klan1/html/span.php",
-      "summary": "HTML <span> element. Extends tag, uses append_shotcuts trait.",
-      "tags": [
-        "html-element",
-        "inline"
-      ]
-    },
-    {
-      "id": "class-p",
-      "type": "class",
-      "name": "p",
-      "filePath": "src/klan1/html/p.php",
-      "summary": "HTML <p> element. Extends tag, uses append_shotcuts trait.",
-      "tags": [
-        "html-element",
-        "block"
-      ]
-    },
-    {
-      "id": "class-a",
-      "type": "class",
-      "name": "a",
-      "filePath": "src/klan1/html/a.php",
-      "summary": "HTML <a> anchor element. Extends tag, uses append_shotcuts trait. Constructor accepts href, label, target, class, id parameters.",
-      "tags": [
-        "html-element",
-        "inline"
-      ]
-    },
-    {
-      "id": "class-img",
-      "type": "class",
-      "name": "img",
-      "filePath": "src/klan1/html/img.php",
-      "summary": "HTML <img> element. Extends tag, uses append_shotcuts trait. Self-closed tag.",
-      "tags": [
-        "html-element",
-        "self-closed",
-        "inline"
-      ]
-    },
-    {
-      "id": "class-input",
-      "type": "class",
-      "name": "input",
-      "filePath": "src/klan1/html/input.php",
-      "summary": "HTML <input> element. Extends tag, uses append_shotcuts trait. Self-closed tag. Constructor accepts type, name, value, class, id parameters.",
-      "tags": [
-        "html-element",
-        "self-closed",
-        "form"
-      ]
-    },
-    {
-      "id": "class-button",
-      "type": "class",
-      "name": "button",
-      "filePath": "src/klan1/html/button.php",
-      "summary": "HTML <button> element. Extends tag, uses append_shotcuts trait.",
-      "tags": [
-        "html-element",
-        "form"
-      ]
-    },
-    {
-      "id": "class-form",
-      "type": "class",
-      "name": "form",
-      "filePath": "src/klan1/html/form.php",
-      "summary": "HTML <form> element. Extends tag, uses append_shotcuts trait.",
-      "tags": [
-        "html-element",
-        "form"
-      ]
-    },
-    {
-      "id": "class-table",
-      "type": "class",
-      "name": "table",
-      "filePath": "src/klan1/html/table.php",
-      "summary": "HTML <table> element. Extends tag, uses append_shotcuts trait.",
-      "tags": [
-        "html-element",
-        "table"
-      ]
-    },
-    {
-      "id": "class-ul",
-      "type": "class",
-      "name": "ul",
-      "filePath": "src/klan1/html/ul.php",
-      "summary": "HTML <ul> unordered list element. Extends tag, uses append_shotcuts trait.",
-      "tags": [
-        "html-element",
-        "list"
-      ]
-    },
-    {
-      "id": "class-ol",
-      "type": "class",
-      "name": "ol",
-      "filePath": "src/klan1/html/ol.php",
-      "summary": "HTML <ol> ordered list element. Extends tag, uses append_shotcuts trait.",
-      "tags": [
-        "html-element",
-        "list"
-      ]
-    },
-    {
-      "id": "class-li",
-      "type": "class",
-      "name": "li",
-      "filePath": "src/klan1/html/li.php",
-      "summary": "HTML <li> list item element. Extends tag, uses append_shotcuts trait.",
-      "tags": [
-        "html-element",
-        "list-item"
-      ]
-    },
-    {
-      "id": "class-h1",
-      "type": "class",
-      "name": "h1",
-      "filePath": "src/klan1/html/h1.php",
-      "summary": "HTML <h1> heading element. Extends tag, uses append_shotcuts trait.",
-      "tags": [
-        "html-element",
-        "heading"
-      ]
-    },
-    {
-      "id": "class-h2",
-      "type": "class",
-      "name": "h2",
-      "filePath": "src/klan1/html/h2.php",
-      "summary": "HTML <h2> heading element. Extends tag, uses append_shotcuts trait.",
-      "tags": [
-        "html-element",
-        "heading"
-      ]
-    },
-    {
-      "id": "class-h3",
-      "type": "class",
-      "name": "h3",
-      "filePath": "src/klan1/html/h3.php",
-      "summary": "HTML <h3> heading element. Extends tag, uses append_shotcuts trait.",
-      "tags": [
-        "html-element",
-        "heading"
-      ]
-    },
-    {
-      "id": "class-h4",
-      "type": "class",
-      "name": "h4",
-      "filePath": "src/klan1/html/h4.php",
-      "summary": "HTML <h4> heading element. Extends tag, uses append_shotcuts trait.",
-      "tags": [
-        "html-element",
-        "heading"
-      ]
-    },
-    {
-      "id": "class-h5",
-      "type": "class",
-      "name": "h5",
-      "filePath": "src/klan1/html/h5.php",
-      "summary": "HTML <h5> heading element. Extends tag, uses append_shotcuts trait.",
-      "tags": [
-        "html-element",
-        "heading"
-      ]
-    },
-    {
-      "id": "class-h6",
-      "type": "class",
-      "name": "h6",
-      "filePath": "src/klan1/html/h6.php",
-      "summary": "HTML <h6> heading element. Extends tag, uses append_shotcuts trait.",
-      "tags": [
-        "html-element",
-        "heading"
-      ]
-    },
-    {
-      "id": "class-head",
-      "type": "class",
-      "name": "head",
-      "filePath": "src/klan1/html/head.php",
-      "summary": "HTML <head> element. Extends tag, uses append_shotcuts trait. Container for metadata elements like title, meta, link, script.",
-      "tags": [
-        "html-element",
-        "metadata"
-      ]
-    },
-    {
-      "id": "class-body",
-      "type": "class",
-      "name": "body",
-      "filePath": "src/klan1/html/body.php",
-      "summary": "HTML <body> element. Extends tag, uses append_shotcuts trait. Container for visible page content.",
-      "tags": [
-        "html-element",
-        "content"
-      ]
-    },
-    {
-      "id": "class-title",
-      "type": "class",
-      "name": "title",
-      "filePath": "src/klan1/html/title.php",
-      "summary": "HTML <title> element. Extends tag. Self-closed tag for document title.",
-      "tags": [
-        "html-element",
-        "metadata",
-        "self-closed"
-      ]
-    },
-    {
-      "id": "class-meta",
-      "type": "class",
-      "name": "meta",
-      "filePath": "src/klan1/html/meta.php",
-      "summary": "HTML <meta> element. Extends tag. Self-closed tag for metadata.",
-      "tags": [
-        "html-element",
-        "metadata",
-        "self-closed"
-      ]
-    },
-    {
-      "id": "class-link",
-      "type": "class",
-      "name": "link",
-      "filePath": "src/klan1/html/link.php",
-      "summary": "HTML <link> element. Extends tag. Self-closed tag for linking external resources.",
-      "tags": [
-        "html-element",
-        "metadata",
-        "self-closed"
-      ]
-    },
-    {
-      "id": "class-script",
-      "type": "class",
-      "name": "script",
-      "filePath": "src/klan1/html/script.php",
-      "summary": "HTML <script> element. Extends tag, uses append_shotcuts trait.",
-      "tags": [
-        "html-element",
-        "javascript"
-      ]
-    },
-    {
-      "id": "class-style",
-      "type": "class",
-      "name": "style",
-      "filePath": "src/klan1/html/style.php",
-      "summary": "HTML <style> element. Extends tag, uses append_shotcuts trait.",
-      "tags": [
-        "html-element",
-        "css"
-      ]
-    },
-    {
-      "id": "class-select",
-      "type": "class",
-      "name": "select",
-      "filePath": "src/klan1/html/select.php",
-      "summary": "HTML <select> dropdown element. Extends tag, uses append_shotcuts trait. Container for option elements.",
-      "tags": [
-        "html-element",
-        "form"
-      ]
-    },
-    {
-      "id": "class-option",
-      "type": "class",
-      "name": "option",
-      "filePath": "src/klan1/html/option.php",
-      "summary": "HTML <option> element. Extends tag. Represents options in select dropdown.",
-      "tags": [
-        "html-element",
-        "form"
-      ]
-    },
-    {
-      "id": "class-textarea",
-      "type": "class",
-      "name": "textarea",
-      "filePath": "src/klan1/html/textarea.php",
-      "summary": "HTML <textarea> element. Extends tag. Multi-line text input.",
-      "tags": [
-        "html-element",
-        "form"
-      ]
-    },
-    {
-      "id": "class-label",
-      "type": "class",
-      "name": "label",
-      "filePath": "src/klan1/html/label.php",
-      "summary": "HTML <label> element. Extends tag, uses append_shotcuts trait.",
-      "tags": [
-        "html-element",
-        "form"
-      ]
-    },
-    {
-      "id": "class-fieldset",
-      "type": "class",
-      "name": "fieldset",
-      "filePath": "src/klan1/html/fieldset.php",
-      "summary": "HTML <fieldset> element. Extends tag, uses append_shotcuts trait. Groups form elements.",
-      "tags": [
-        "html-element",
-        "form"
-      ]
-    },
-    {
-      "id": "class-legend",
-      "type": "class",
-      "name": "legend",
-      "filePath": "src/klan1/html/legend.php",
-      "summary": "HTML <legend> element. Extends tag. Caption for fieldset.",
-      "tags": [
-        "html-element",
-        "form"
-      ]
-    },
-    {
-      "id": "class-thead",
-      "type": "class",
-      "name": "thead",
-      "filePath": "src/klan1/html/thead.php",
-      "summary": "HTML <thead> table head element. Extends tag, uses append_shotcuts trait.",
-      "tags": [
-        "html-element",
-        "table"
-      ]
-    },
-    {
-      "id": "class-tbody",
-      "type": "class",
-      "name": "tbody",
-      "filePath": "src/klan1/html/tbody.php",
-      "summary": "HTML <tbody> table body element. Extends tag, uses append_shotcuts trait.",
-      "tags": [
-        "html-element",
-        "table"
-      ]
-    },
-    {
-      "id": "class-tfoot",
-      "type": "class",
-      "name": "tfoot",
-      "filePath": "src/klan1/html/tfoot.php",
-      "summary": "HTML <tfoot> table foot element. Extends tag, uses append_shotcuts trait.",
-      "tags": [
-        "html-element",
-        "table"
-      ]
-    },
-    {
-      "id": "class-tr",
-      "type": "class",
-      "name": "tr",
-      "filePath": "src/klan1/html/tr.php",
-      "summary": "HTML <tr> table row element. Extends tag, uses append_shotcuts trait.",
-      "tags": [
-        "html-element",
-        "table"
-      ]
-    },
-    {
-      "id": "class-th",
-      "type": "class",
-      "name": "th",
-      "filePath": "src/klan1/html/th.php",
-      "summary": "HTML <th> table header cell. Extends tag, uses append_shotcuts trait.",
-      "tags": [
-        "html-element",
-        "table"
-      ]
-    },
-    {
-      "id": "class-td",
-      "type": "class",
-      "name": "td",
-      "filePath": "src/klan1/html/td.php",
-      "summary": "HTML <td> table data cell. Extends tag, uses append_shotcuts trait.",
-      "tags": [
-        "html-element",
-        "table"
-      ]
-    },
-    {
-      "id": "class-caption",
-      "type": "class",
-      "name": "caption",
-      "filePath": "src/klan1/html/caption.php",
-      "summary": "HTML <caption> table caption. Extends tag.",
-      "tags": [
-        "html-element",
-        "table"
-      ]
-    },
-    {
-      "id": "class-nav",
-      "type": "class",
-      "name": "nav",
-      "filePath": "src/klan1/html/nav.php",
-      "summary": "HTML <nav> navigation element. Extends tag, uses append_shotcuts trait.",
-      "tags": [
-        "html-element",
-        "semantic"
-      ]
-    },
-    {
-      "id": "class-header",
-      "type": "class",
-      "name": "header",
-      "filePath": "src/klan1/html/header.php",
-      "summary": "HTML <header> element. Extends tag, uses append_shotcuts trait.",
-      "tags": [
-        "html-element",
-        "semantic"
-      ]
-    },
-    {
-      "id": "class-footer",
-      "type": "class",
-      "name": "footer",
-      "filePath": "src/klan1/html/footer.php",
-      "summary": "HTML <footer> element. Extends tag, uses append_shotcuts trait.",
-      "tags": [
-        "html-element",
-        "semantic"
-      ]
-    },
-    {
-      "id": "class-main",
-      "type": "class",
-      "name": "main",
-      "filePath": "src/klan1/html/main.php",
-      "summary": "HTML <main> element. Extends tag, uses append_shotcuts trait.",
-      "tags": [
-        "html-element",
-        "semantic"
-      ]
-    },
-    {
-      "id": "class-aside",
-      "type": "class",
-      "name": "aside",
-      "filePath": "src/klan1/html/aside.php",
-      "summary": "HTML <aside> element. Extends tag, uses append_shotcuts trait.",
-      "tags": [
-        "html-element",
-        "semantic"
-      ]
-    },
-    {
-      "id": "class-section",
-      "type": "class",
-      "name": "section",
-      "filePath": "src/klan1/html/section.php",
-      "summary": "HTML <section> element. Extends tag, uses append_shotcuts trait.",
-      "tags": [
-        "html-element",
-        "semantic"
-      ]
-    },
-    {
-      "id": "class-article",
-      "type": "class",
-      "name": "article",
-      "filePath": "src/klan1/html/article.php",
-      "summary": "HTML <article> element. Extends tag, uses append_shotcuts trait.",
-      "tags": [
-        "html-element",
-        "semantic"
-      ]
-    },
-    {
-      "id": "class-iframe",
-      "type": "class",
-      "name": "iframe",
-      "filePath": "src/klan1/html/iframe.php",
-      "summary": "HTML <iframe> inline frame element. Extends tag, uses append_shotcuts trait.",
-      "tags": [
-        "html-element",
-        "embedded"
-      ]
-    },
-    {
-      "id": "class-br",
-      "type": "class",
-      "name": "br",
-      "filePath": "src/klan1/html/br.php",
-      "summary": "HTML <br> line break. Self-closed tag.",
-      "tags": [
-        "html-element",
-        "self-closed",
-        "inline"
-      ]
-    },
-    {
-      "id": "class-hr",
-      "type": "class",
-      "name": "hr",
-      "filePath": "src/klan1/html/hr.php",
-      "summary": "HTML <hr> horizontal rule. Self-closed tag.",
-      "tags": [
-        "html-element",
-        "self-closed",
-        "block"
-      ]
-    },
-    {
-      "id": "class-strong",
-      "type": "class",
-      "name": "strong",
-      "filePath": "src/klan1/html/strong.php",
-      "summary": "HTML <strong> strong emphasis. Extends tag, uses append_shotcuts trait.",
-      "tags": [
-        "html-element",
-        "inline",
-        "semantic"
-      ]
-    },
-    {
-      "id": "class-em",
-      "type": "class",
-      "name": "em",
-      "filePath": "src/klan1/html/em.php",
-      "summary": "HTML <em> emphasis. Extends tag, uses append_shotcuts trait.",
-      "tags": [
-        "html-element",
-        "inline",
-        "semantic"
-      ]
-    },
-    {
-      "id": "class-b",
-      "type": "class",
-      "name": "b",
-      "filePath": "src/klan1/html/b.php",
-      "summary": "HTML <b> bold text. Extends tag, uses append_shotcuts trait.",
-      "tags": [
-        "html-element",
-        "inline"
-      ]
-    },
-    {
-      "id": "class-i",
-      "type": "class",
-      "name": "i",
-      "filePath": "src/klan1/html/i.php",
-      "summary": "HTML <i> italic text. Extends tag, uses append_shotcuts trait.",
-      "tags": [
-        "html-element",
-        "inline"
-      ]
-    },
-    {
-      "id": "class-small",
-      "type": "class",
-      "name": "small",
-      "filePath": "src/klan1/html/small.php",
-      "summary": "HTML <small> small text. Extends tag, uses append_shotcuts trait.",
-      "tags": [
-        "html-element",
-        "inline"
-      ]
-    },
-    {
-      "id": "class-code",
-      "type": "class",
-      "name": "code",
-      "filePath": "src/klan1/html/code.php",
-      "summary": "HTML <code> inline code. Extends tag, uses append_shotcuts trait.",
-      "tags": [
-        "html-element",
-        "inline"
-      ]
-    },
-    {
-      "id": "class-pre",
-      "type": "class",
-      "name": "pre",
-      "filePath": "src/klan1/html/pre.php",
-      "summary": "HTML <pre> preformatted text. Extends tag, uses append_shotcuts trait.",
-      "tags": [
-        "html-element",
-        "block"
-      ]
-    },
-    {
-      "id": "class-on_DOM",
-      "type": "class",
-      "name": "on_DOM",
-      "filePath": "src/klan1/html/notifications/on_DOM.php",
-      "summary": "Notification system component. Extends common_code. Renders messages as Bootstrap alerts in the DOM. Methods: queue_mesasage(), queue_title(), insert_messases_on_DOM().",
-      "tags": [
-        "notifications",
-        "ui"
-      ]
-    },
-    {
-      "id": "class-common_code",
-      "type": "class",
-      "name": "common_code",
+      "id": "file:src/klan1/html/notifications/common_code.php",
+      "type": "file",
+      "name": "common_code.php",
       "filePath": "src/klan1/html/notifications/common_code.php",
-      "summary": "Base notification class. Provides session-based message queuing. Methods: _queue_mesasage(), _queue_mesasage_title(), clean_queue(), set_tpl().",
+      "summary": "Session-based message queue.",
       "tags": [
         "notifications",
-        "base"
-      ]
-    },
-    {
-      "id": "module-html-generation",
-      "type": "module",
-      "name": "HTML Generation",
-      "filePath": null,
-      "summary": "Core module for generating HTML documents using an object-oriented DOM-like approach. Tag classes render to HTML strings via generate() method.",
-      "tags": [
-        "core",
-        "html-generation"
-      ]
-    },
-    {
-      "id": "module-tagging",
-      "type": "module",
-      "name": "Tag Catalog & ID Management",
-      "filePath": null,
-      "summary": "System for cataloging tag instances with unique IDs. Enables inline tag embedding and lookup via tag_catalog static registry.",
-      "tags": [
-        "core",
-        "registry"
-      ]
-    },
-    {
-      "id": "module-child-management",
-      "type": "module",
-      "name": "Child Element Management",
-      "filePath": null,
-      "summary": "System for managing child elements with three collections: head, main, and tail. Supports fluent API via append_shotcuts trait.",
-      "tags": [
-        "core",
-        "dom-tree"
-      ]
-    },
-    {
-      "id": "module-notifications",
-      "type": "module",
-      "name": "Notifications System",
-      "filePath": null,
-      "summary": "Session-based message queue for user notifications. Components: common_code base class, on_DOM renderer.",
-      "tags": [
-        "ui",
         "session"
       ]
     },
     {
-      "id": "concept-inheritance",
-      "type": "concept",
-      "name": "Tag Inheritance Pattern",
-      "filePath": null,
-      "summary": "All HTML elements inherit from the base tag class. Each tag class calls parent::__construct() with tag name and self-closed flag.",
+      "id": "file:src/klan1/html/notifications/on_DOM.php",
+      "type": "file",
+      "name": "on_DOM.php",
+      "filePath": "src/klan1/html/notifications/on_DOM.php",
+      "summary": "DOM message insertion for notifications.",
       "tags": [
-        "pattern",
-        "oop"
+        "notifications",
+        "dom"
       ]
     },
     {
-      "id": "concept-fluent-api",
+      "id": "file:src/klan1/html/div.php",
+      "type": "file",
+      "name": "div.php",
+      "filePath": "src/klan1/html/div.php",
+      "summary": "HTML div element.",
+      "tags": [
+        "html-element"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/span.php",
+      "type": "file",
+      "name": "span.php",
+      "filePath": "src/klan1/html/span.php",
+      "summary": "HTML span element.",
+      "tags": [
+        "html-element"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/p.php",
+      "type": "file",
+      "name": "p.php",
+      "filePath": "src/klan1/html/p.php",
+      "summary": "HTML paragraph element.",
+      "tags": [
+        "html-element"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/a.php",
+      "type": "file",
+      "name": "a.php",
+      "filePath": "src/klan1/html/a.php",
+      "summary": "HTML anchor element.",
+      "tags": [
+        "html-element"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/img.php",
+      "type": "file",
+      "name": "img.php",
+      "filePath": "src/klan1/html/img.php",
+      "summary": "HTML img element (self-closed).",
+      "tags": [
+        "html-element",
+        "self-closed"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/input.php",
+      "type": "file",
+      "name": "input.php",
+      "filePath": "src/klan1/html/input.php",
+      "summary": "HTML input element (self-closed).",
+      "tags": [
+        "html-element",
+        "self-closed"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/button.php",
+      "type": "file",
+      "name": "button.php",
+      "filePath": "src/klan1/html/button.php",
+      "summary": "HTML button element.",
+      "tags": [
+        "html-element"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/form.php",
+      "type": "file",
+      "name": "form.php",
+      "filePath": "src/klan1/html/form.php",
+      "summary": "HTML form element.",
+      "tags": [
+        "html-element"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/table.php",
+      "type": "file",
+      "name": "table.php",
+      "filePath": "src/klan1/html/table.php",
+      "summary": "HTML table element.",
+      "tags": [
+        "html-element"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/ul.php",
+      "type": "file",
+      "name": "ul.php",
+      "filePath": "src/klan1/html/ul.php",
+      "summary": "HTML unordered list.",
+      "tags": [
+        "html-element"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/ol.php",
+      "type": "file",
+      "name": "ol.php",
+      "filePath": "src/klan1/html/ol.php",
+      "summary": "HTML ordered list.",
+      "tags": [
+        "html-element"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/li.php",
+      "type": "file",
+      "name": "li.php",
+      "filePath": "src/klan1/html/li.php",
+      "summary": "HTML list item.",
+      "tags": [
+        "html-element"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/h1.php",
+      "type": "file",
+      "name": "h1.php",
+      "filePath": "src/klan1/html/h1.php",
+      "summary": "HTML h1 heading.",
+      "tags": [
+        "html-element"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/h2.php",
+      "type": "file",
+      "name": "h2.php",
+      "filePath": "src/klan1/html/h2.php",
+      "summary": "HTML h2 heading.",
+      "tags": [
+        "html-element"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/h3.php",
+      "type": "file",
+      "name": "h3.php",
+      "filePath": "src/klan1/html/h3.php",
+      "summary": "HTML h3 heading.",
+      "tags": [
+        "html-element"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/h4.php",
+      "type": "file",
+      "name": "h4.php",
+      "filePath": "src/klan1/html/h4.php",
+      "summary": "HTML h4 heading.",
+      "tags": [
+        "html-element"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/h5.php",
+      "type": "file",
+      "name": "h5.php",
+      "filePath": "src/klan1/html/h5.php",
+      "summary": "HTML h5 heading.",
+      "tags": [
+        "html-element"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/h6.php",
+      "type": "file",
+      "name": "h6.php",
+      "filePath": "src/klan1/html/h6.php",
+      "summary": "HTML h6 heading.",
+      "tags": [
+        "html-element"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/meta.php",
+      "type": "file",
+      "name": "meta.php",
+      "filePath": "src/klan1/html/meta.php",
+      "summary": "HTML meta element (self-closed).",
+      "tags": [
+        "html-element",
+        "self-closed"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/title.php",
+      "type": "file",
+      "name": "title.php",
+      "filePath": "src/klan1/html/title.php",
+      "summary": "HTML title element.",
+      "tags": [
+        "html-element"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/link.php",
+      "type": "file",
+      "name": "link.php",
+      "filePath": "src/klan1/html/link.php",
+      "summary": "HTML link element (self-closed).",
+      "tags": [
+        "html-element",
+        "self-closed"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/script.php",
+      "type": "file",
+      "name": "script.php",
+      "filePath": "src/klan1/html/script.php",
+      "summary": "HTML script element.",
+      "tags": [
+        "html-element"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/style.php",
+      "type": "file",
+      "name": "style.php",
+      "filePath": "src/klan1/html/style.php",
+      "summary": "HTML style element.",
+      "tags": [
+        "html-element"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/select.php",
+      "type": "file",
+      "name": "select.php",
+      "filePath": "src/klan1/html/select.php",
+      "summary": "HTML select element.",
+      "tags": [
+        "html-element"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/option.php",
+      "type": "file",
+      "name": "option.php",
+      "filePath": "src/klan1/html/option.php",
+      "summary": "HTML option element.",
+      "tags": [
+        "html-element"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/textarea.php",
+      "type": "file",
+      "name": "textarea.php",
+      "filePath": "src/klan1/html/textarea.php",
+      "summary": "HTML textarea element.",
+      "tags": [
+        "html-element"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/label.php",
+      "type": "file",
+      "name": "label.php",
+      "filePath": "src/klan1/html/label.php",
+      "summary": "HTML label element.",
+      "tags": [
+        "html-element"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/legend.php",
+      "type": "file",
+      "name": "legend.php",
+      "filePath": "src/klan1/html/legend.php",
+      "summary": "HTML legend element.",
+      "tags": [
+        "html-element"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/fieldset.php",
+      "type": "file",
+      "name": "fieldset.php",
+      "filePath": "src/klan1/html/fieldset.php",
+      "summary": "HTML fieldset element.",
+      "tags": [
+        "html-element"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/nav.php",
+      "type": "file",
+      "name": "nav.php",
+      "filePath": "src/klan1/html/nav.php",
+      "summary": "HTML nav element.",
+      "tags": [
+        "html-element"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/section.php",
+      "type": "file",
+      "name": "section.php",
+      "filePath": "src/klan1/html/section.php",
+      "summary": "HTML section element.",
+      "tags": [
+        "html-element"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/article.php",
+      "type": "file",
+      "name": "article.php",
+      "filePath": "src/klan1/html/article.php",
+      "summary": "HTML article element.",
+      "tags": [
+        "html-element"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/aside.php",
+      "type": "file",
+      "name": "aside.php",
+      "filePath": "src/klan1/html/aside.php",
+      "summary": "HTML aside element.",
+      "tags": [
+        "html-element"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/header.php",
+      "type": "file",
+      "name": "header.php",
+      "filePath": "src/klan1/html/header.php",
+      "summary": "HTML header element.",
+      "tags": [
+        "html-element"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/footer.php",
+      "type": "file",
+      "name": "footer.php",
+      "filePath": "src/klan1/html/footer.php",
+      "summary": "HTML footer element.",
+      "tags": [
+        "html-element"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/main.php",
+      "type": "file",
+      "name": "main.php",
+      "filePath": "src/klan1/html/main.php",
+      "summary": "HTML main element.",
+      "tags": [
+        "html-element"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/strong.php",
+      "type": "file",
+      "name": "strong.php",
+      "filePath": "src/klan1/html/strong.php",
+      "summary": "HTML strong element.",
+      "tags": [
+        "html-element"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/em.php",
+      "type": "file",
+      "name": "em.php",
+      "filePath": "src/klan1/html/em.php",
+      "summary": "HTML em element.",
+      "tags": [
+        "html-element"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/i.php",
+      "type": "file",
+      "name": "i.php",
+      "filePath": "src/klan1/html/i.php",
+      "summary": "HTML i element.",
+      "tags": [
+        "html-element"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/b.php",
+      "type": "file",
+      "name": "b.php",
+      "filePath": "src/klan1/html/b.php",
+      "summary": "HTML b element.",
+      "tags": [
+        "html-element"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/small.php",
+      "type": "file",
+      "name": "small.php",
+      "filePath": "src/klan1/html/small.php",
+      "summary": "HTML small element.",
+      "tags": [
+        "html-element"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/code.php",
+      "type": "file",
+      "name": "code.php",
+      "filePath": "src/klan1/html/code.php",
+      "summary": "HTML code element.",
+      "tags": [
+        "html-element"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/pre.php",
+      "type": "file",
+      "name": "pre.php",
+      "filePath": "src/klan1/html/pre.php",
+      "summary": "HTML pre element.",
+      "tags": [
+        "html-element"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/br.php",
+      "type": "file",
+      "name": "br.php",
+      "filePath": "src/klan1/html/br.php",
+      "summary": "HTML br element (self-closed).",
+      "tags": [
+        "html-element",
+        "self-closed"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/hr.php",
+      "type": "file",
+      "name": "hr.php",
+      "filePath": "src/klan1/html/hr.php",
+      "summary": "HTML hr element (self-closed).",
+      "tags": [
+        "html-element",
+        "self-closed"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/iframe.php",
+      "type": "file",
+      "name": "iframe.php",
+      "filePath": "src/klan1/html/iframe.php",
+      "summary": "HTML iframe element.",
+      "tags": [
+        "html-element"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/caption.php",
+      "type": "file",
+      "name": "caption.php",
+      "filePath": "src/klan1/html/caption.php",
+      "summary": "HTML caption element.",
+      "tags": [
+        "html-element"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/thead.php",
+      "type": "file",
+      "name": "thead.php",
+      "filePath": "src/klan1/html/thead.php",
+      "summary": "HTML thead element.",
+      "tags": [
+        "html-element"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/tbody.php",
+      "type": "file",
+      "name": "tbody.php",
+      "filePath": "src/klan1/html/tbody.php",
+      "summary": "HTML tbody element.",
+      "tags": [
+        "html-element"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/tfoot.php",
+      "type": "file",
+      "name": "tfoot.php",
+      "filePath": "src/klan1/html/tfoot.php",
+      "summary": "HTML tfoot element.",
+      "tags": [
+        "html-element"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/tr.php",
+      "type": "file",
+      "name": "tr.php",
+      "filePath": "src/klan1/html/tr.php",
+      "summary": "HTML tr element.",
+      "tags": [
+        "html-element"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/th.php",
+      "type": "file",
+      "name": "th.php",
+      "filePath": "src/klan1/html/th.php",
+      "summary": "HTML th element.",
+      "tags": [
+        "html-element"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/td.php",
+      "type": "file",
+      "name": "td.php",
+      "filePath": "src/klan1/html/td.php",
+      "summary": "HTML td element.",
+      "tags": [
+        "html-element"
+      ]
+    },
+    {
+      "id": "file:examples/01-basic-document.php",
+      "type": "file",
+      "name": "01-basic-document.php",
+      "filePath": "examples/01-basic-document.php",
+      "summary": "Example: basic document.",
+      "tags": [
+        "example"
+      ]
+    },
+    {
+      "id": "file:README.md",
+      "type": "file",
+      "name": "README.md",
+      "filePath": "README.md",
+      "summary": "Project README.",
+      "tags": [
+        "docs"
+      ]
+    },
+    {
+      "id": "file:CLAUDE.md",
+      "type": "file",
+      "name": "CLAUDE.md",
+      "filePath": "CLAUDE.md",
+      "summary": "Architecture guide for Claude Code.",
+      "tags": [
+        "docs"
+      ]
+    },
+    {
+      "id": "config:composer.json",
+      "type": "config",
+      "name": "composer.json",
+      "filePath": "composer.json",
+      "summary": "Composer manifest.",
+      "tags": [
+        "config"
+      ]
+    },
+    {
+      "id": "concept:inline-tags",
+      "type": "concept",
+      "name": "Inline Tags",
+      "summary": "Tags embedded in text via {{ID:N}} placeholders.",
+      "tags": [
+        "pattern"
+      ]
+    },
+    {
+      "id": "concept:child-collections",
+      "type": "concept",
+      "name": "Child Collections",
+      "summary": "Three ordered child arrays: head, main, tail.",
+      "tags": [
+        "pattern"
+      ]
+    },
+    {
+      "id": "concept:fluent-api",
       "type": "concept",
       "name": "Fluent API",
-      "filePath": null,
-      "summary": "Method chaining pattern used throughout the library. Most setter methods return $this for chaining. append_shotcuts trait provides fluent child creation.",
+      "summary": "Method chaining for tag construction.",
       "tags": [
-        "pattern",
-        "api-design"
-      ]
-    },
-    {
-      "id": "concept-inline-tags",
-      "type": "concept",
-      "name": "Inline Tag Embedding",
-      "filePath": null,
-      "summary": "Tag objects can be embedded in text values. __toString() returns {{ID:N}} placeholder which is replaced during generate() via parse_value().",
-      "tags": [
-        "pattern",
-        "templating"
-      ]
-    },
-    {
-      "id": "concept-child-collections",
-      "type": "concept",
-      "name": "Three-Collection Child System",
-      "filePath": null,
-      "summary": "Tags maintain three child arrays: childs_head (rendered first), childs (main), childs_tail (rendered last). Allows fine-grained control over element ordering.",
-      "tags": [
-        "pattern",
-        "dom-tree"
+        "pattern"
       ]
     }
   ],
   "edges": [
     {
-      "source": "class-html_document",
-      "target": "class-tag",
+      "source": "file:src/klan1/html/html_document.php",
+      "target": "file:src/klan1/html/tag.php",
       "type": "inherits",
-      "weight": 10
+      "weight": 0.9
     },
     {
-      "source": "class-div",
-      "target": "class-tag",
-      "type": "inherits",
-      "weight": 9
-    },
-    {
-      "source": "class-span",
-      "target": "class-tag",
-      "type": "inherits",
-      "weight": 9
-    },
-    {
-      "source": "class-p",
-      "target": "class-tag",
-      "type": "inherits",
-      "weight": 9
-    },
-    {
-      "source": "class-a",
-      "target": "class-tag",
-      "type": "inherits",
-      "weight": 9
-    },
-    {
-      "source": "class-img",
-      "target": "class-tag",
-      "type": "inherits",
-      "weight": 9
-    },
-    {
-      "source": "class-input",
-      "target": "class-tag",
-      "type": "inherits",
-      "weight": 9
-    },
-    {
-      "source": "class-button",
-      "target": "class-tag",
-      "type": "inherits",
-      "weight": 9
-    },
-    {
-      "source": "class-form",
-      "target": "class-tag",
-      "type": "inherits",
-      "weight": 9
-    },
-    {
-      "source": "class-table",
-      "target": "class-tag",
-      "type": "inherits",
-      "weight": 9
-    },
-    {
-      "source": "class-ul",
-      "target": "class-tag",
-      "type": "inherits",
-      "weight": 9
-    },
-    {
-      "source": "class-ol",
-      "target": "class-tag",
-      "type": "inherits",
-      "weight": 9
-    },
-    {
-      "source": "class-li",
-      "target": "class-tag",
-      "type": "inherits",
-      "weight": 9
-    },
-    {
-      "source": "class-h1",
-      "target": "class-tag",
-      "type": "inherits",
-      "weight": 9
-    },
-    {
-      "source": "class-h2",
-      "target": "class-tag",
-      "type": "inherits",
-      "weight": 9
-    },
-    {
-      "source": "class-h3",
-      "target": "class-tag",
-      "type": "inherits",
-      "weight": 9
-    },
-    {
-      "source": "class-h4",
-      "target": "class-tag",
-      "type": "inherits",
-      "weight": 9
-    },
-    {
-      "source": "class-h5",
-      "target": "class-tag",
-      "type": "inherits",
-      "weight": 9
-    },
-    {
-      "source": "class-h6",
-      "target": "class-tag",
-      "type": "inherits",
-      "weight": 9
-    },
-    {
-      "source": "class-head",
-      "target": "class-tag",
-      "type": "inherits",
-      "weight": 9
-    },
-    {
-      "source": "class-body",
-      "target": "class-tag",
-      "type": "inherits",
-      "weight": 9
-    },
-    {
-      "source": "class-title",
-      "target": "class-tag",
-      "type": "inherits",
-      "weight": 9
-    },
-    {
-      "source": "class-meta",
-      "target": "class-tag",
-      "type": "inherits",
-      "weight": 9
-    },
-    {
-      "source": "class-link",
-      "target": "class-tag",
-      "type": "inherits",
-      "weight": 9
-    },
-    {
-      "source": "class-script",
-      "target": "class-tag",
-      "type": "inherits",
-      "weight": 9
-    },
-    {
-      "source": "class-style",
-      "target": "class-tag",
-      "type": "inherits",
-      "weight": 9
-    },
-    {
-      "source": "class-select",
-      "target": "class-tag",
-      "type": "inherits",
-      "weight": 9
-    },
-    {
-      "source": "class-option",
-      "target": "class-tag",
-      "type": "inherits",
-      "weight": 9
-    },
-    {
-      "source": "class-textarea",
-      "target": "class-tag",
-      "type": "inherits",
-      "weight": 9
-    },
-    {
-      "source": "class-label",
-      "target": "class-tag",
-      "type": "inherits",
-      "weight": 9
-    },
-    {
-      "source": "class-fieldset",
-      "target": "class-tag",
-      "type": "inherits",
-      "weight": 9
-    },
-    {
-      "source": "class-legend",
-      "target": "class-tag",
-      "type": "inherits",
-      "weight": 9
-    },
-    {
-      "source": "class-thead",
-      "target": "class-tag",
-      "type": "inherits",
-      "weight": 9
-    },
-    {
-      "source": "class-tbody",
-      "target": "class-tag",
-      "type": "inherits",
-      "weight": 9
-    },
-    {
-      "source": "class-tfoot",
-      "target": "class-tag",
-      "type": "inherits",
-      "weight": 9
-    },
-    {
-      "source": "class-tr",
-      "target": "class-tag",
-      "type": "inherits",
-      "weight": 9
-    },
-    {
-      "source": "class-th",
-      "target": "class-tag",
-      "type": "inherits",
-      "weight": 9
-    },
-    {
-      "source": "class-td",
-      "target": "class-tag",
-      "type": "inherits",
-      "weight": 9
-    },
-    {
-      "source": "class-caption",
-      "target": "class-tag",
-      "type": "inherits",
-      "weight": 9
-    },
-    {
-      "source": "class-nav",
-      "target": "class-tag",
-      "type": "inherits",
-      "weight": 9
-    },
-    {
-      "source": "class-header",
-      "target": "class-tag",
-      "type": "inherits",
-      "weight": 9
-    },
-    {
-      "source": "class-footer",
-      "target": "class-tag",
-      "type": "inherits",
-      "weight": 9
-    },
-    {
-      "source": "class-main",
-      "target": "class-tag",
-      "type": "inherits",
-      "weight": 9
-    },
-    {
-      "source": "class-aside",
-      "target": "class-tag",
-      "type": "inherits",
-      "weight": 9
-    },
-    {
-      "source": "class-section",
-      "target": "class-tag",
-      "type": "inherits",
-      "weight": 9
-    },
-    {
-      "source": "class-article",
-      "target": "class-tag",
-      "type": "inherits",
-      "weight": 9
-    },
-    {
-      "source": "class-iframe",
-      "target": "class-tag",
-      "type": "inherits",
-      "weight": 9
-    },
-    {
-      "source": "class-br",
-      "target": "class-tag",
-      "type": "inherits",
-      "weight": 9
-    },
-    {
-      "source": "class-hr",
-      "target": "class-tag",
-      "type": "inherits",
-      "weight": 9
-    },
-    {
-      "source": "class-strong",
-      "target": "class-tag",
-      "type": "inherits",
-      "weight": 9
-    },
-    {
-      "source": "class-em",
-      "target": "class-tag",
-      "type": "inherits",
-      "weight": 9
-    },
-    {
-      "source": "class-b",
-      "target": "class-tag",
-      "type": "inherits",
-      "weight": 9
-    },
-    {
-      "source": "class-i",
-      "target": "class-tag",
-      "type": "inherits",
-      "weight": 9
-    },
-    {
-      "source": "class-small",
-      "target": "class-tag",
-      "type": "inherits",
-      "weight": 9
-    },
-    {
-      "source": "class-code",
-      "target": "class-tag",
-      "type": "inherits",
-      "weight": 9
-    },
-    {
-      "source": "class-pre",
-      "target": "class-tag",
-      "type": "inherits",
-      "weight": 9
-    },
-    {
-      "source": "class-tag",
-      "target": "class-append_shotcuts",
-      "type": "uses",
-      "weight": 8
-    },
-    {
-      "source": "class-html_document",
-      "target": "class-append_shotcuts",
-      "type": "uses",
-      "weight": 8
-    },
-    {
-      "source": "class-on_DOM",
-      "target": "class-common_code",
-      "type": "inherits",
-      "weight": 8
-    },
-    {
-      "source": "class-DOM",
-      "target": "class-html_document",
-      "type": "uses",
-      "weight": 7
-    },
-    {
-      "source": "class-tag",
-      "target": "class-tag_catalog",
-      "type": "uses",
-      "weight": 8
-    },
-    {
-      "source": "class-template",
-      "target": "class-DOM",
-      "type": "uses",
-      "weight": 5
-    },
-    {
-      "source": "class-common_code",
-      "target": "class-html_document",
-      "type": "uses",
-      "weight": 5
-    },
-    {
-      "source": "file-tag-php",
-      "target": "file-append_shotcuts-php",
-      "type": "imports",
-      "weight": 10
-    },
-    {
-      "source": "file-tag-php",
-      "target": "file-tag_catalog-php",
-      "type": "imports",
-      "weight": 10
-    },
-    {
-      "source": "file-html_document-php",
-      "target": "file-tag-php",
-      "type": "imports",
-      "weight": 10
-    },
-    {
-      "source": "file-html_document-php",
-      "target": "file-append_shotcuts-php",
-      "type": "imports",
-      "weight": 10
-    },
-    {
-      "source": "file-html_document-php",
-      "target": "file-tag_log-php",
-      "type": "imports",
-      "weight": 8
-    },
-    {
-      "source": "file-DOM-php",
-      "target": "file-html_document-php",
-      "type": "imports",
-      "weight": 10
-    },
-    {
-      "source": "file-template-php",
-      "target": "file-DOM-php",
-      "type": "imports",
-      "weight": 6
-    },
-    {
-      "source": "module-html-generation",
-      "target": "class-tag",
+      "source": "file:src/klan1/html/html_document.php",
+      "target": "file:src/klan1/html/head.php",
       "type": "contains",
-      "weight": 10
+      "weight": 1.0
     },
     {
-      "source": "module-html-generation",
-      "target": "class-html_document",
+      "source": "file:src/klan1/html/html_document.php",
+      "target": "file:src/klan1/html/body.php",
       "type": "contains",
-      "weight": 10
+      "weight": 1.0
     },
     {
-      "source": "module-tagging",
-      "target": "class-tag_catalog",
-      "type": "contains",
-      "weight": 10
+      "source": "file:src/klan1/html/html_document.php",
+      "target": "file:src/klan1/html/meta.php",
+      "type": "uses",
+      "weight": 0.7
     },
     {
-      "source": "module-child-management",
-      "target": "class-append_shotcuts",
-      "type": "contains",
-      "weight": 10
+      "source": "file:src/klan1/html/DOM.php",
+      "target": "file:src/klan1/html/html_document.php",
+      "type": "uses",
+      "weight": 0.8
     },
     {
-      "source": "module-notifications",
-      "target": "class-common_code",
-      "type": "contains",
-      "weight": 8
+      "source": "file:src/klan1/html/DOM.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "uses",
+      "weight": 0.7
     },
     {
-      "source": "module-notifications",
-      "target": "class-on_DOM",
-      "type": "contains",
-      "weight": 8
+      "source": "file:src/klan1/html/head.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "inherits",
+      "weight": 0.9
     },
     {
-      "source": "concept-inheritance",
-      "target": "class-tag",
+      "source": "file:src/klan1/html/body.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/tag.php",
+      "target": "file:src/klan1/html/append_shotcuts.php",
+      "type": "uses",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/klan1/html/tag.php",
+      "target": "file:src/klan1/html/tag_catalog.php",
+      "type": "uses",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/klan1/html/tag_catalog.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "used_by",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/klan1/html/div.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/span.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/p.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/a.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/img.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/input.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/button.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/form.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/table.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/ul.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/ol.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/li.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/h1.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/h2.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/h3.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/h4.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/h5.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/h6.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/meta.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/title.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/link.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/script.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/style.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/select.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/option.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/textarea.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/label.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/legend.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/fieldset.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/nav.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/section.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/article.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/aside.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/header.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/footer.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/main.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/strong.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/em.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/i.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/b.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/small.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/code.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/pre.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/br.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/hr.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/iframe.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/caption.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/thead.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/tbody.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/tfoot.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/tr.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/th.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/td.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/append_shotcuts.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "uses",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/klan1/html/notifications/on_DOM.php",
+      "target": "file:src/klan1/html/notifications/common_code.php",
+      "type": "inherits",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/notifications/common_code.php",
+      "target": "file:src/klan1/html/html_document.php",
+      "type": "uses",
+      "weight": 0.6
+    },
+    {
+      "source": "concept:inline-tags",
+      "target": "file:src/klan1/html/tag.php",
       "type": "documents",
-      "weight": 7
+      "weight": 0.5
     },
     {
-      "source": "concept-fluent-api",
-      "target": "class-append_shotcuts",
+      "source": "concept:child-collections",
+      "target": "file:src/klan1/html/tag.php",
       "type": "documents",
-      "weight": 7
-    },
-    {
-      "source": "concept-inline-tags",
-      "target": "class-tag",
-      "type": "documents",
-      "weight": 7
-    },
-    {
-      "source": "concept-child-collections",
-      "target": "class-tag",
-      "type": "documents",
-      "weight": 7
+      "weight": 0.5
     }
   ],
   "layers": [
     {
-      "id": "layer-core",
-      "name": "Core Layer",
-      "description": "Fundamental classes that form the foundation of the HTML generation system",
+      "id": "layer:core",
+      "name": "Core",
+      "description": "Base classes and infrastructure.",
       "nodeIds": [
-        "class-tag",
-        "class-tag_catalog",
-        "class-append_shotcuts",
-        "class-html_document",
-        "class-DOM"
+        "file:src/klan1/html/tag.php",
+        "file:src/klan1/html/html_document.php",
+        "file:src/klan1/html/head.php",
+        "file:src/klan1/html/body.php",
+        "file:src/klan1/html/append_shotcuts.php",
+        "file:src/klan1/html/tag_catalog.php",
+        "file:src/klan1/html/tag_log.php"
       ]
     },
     {
-      "id": "layer-html-elements",
-      "name": "HTML Elements Layer",
-      "description": "All HTML element classes that extend the base tag class",
+      "id": "layer:elements",
+      "name": "HTML Elements",
+      "description": "Individual tag implementations.",
       "nodeIds": [
-        "class-div",
-        "class-span",
-        "class-p",
-        "class-a",
-        "class-img",
-        "class-input",
-        "class-button",
-        "class-form",
-        "class-table",
-        "class-ul",
-        "class-ol",
-        "class-li",
-        "class-h1",
-        "class-h2",
-        "class-h3",
-        "class-h4",
-        "class-h5",
-        "class-h6",
-        "class-head",
-        "class-body",
-        "class-title",
-        "class-meta",
-        "class-link",
-        "class-script",
-        "class-style",
-        "class-select",
-        "class-option",
-        "class-textarea",
-        "class-label",
-        "class-fieldset",
-        "class-legend",
-        "class-thead",
-        "class-tbody",
-        "class-tfoot",
-        "class-tr",
-        "class-th",
-        "class-td",
-        "class-caption",
-        "class-nav",
-        "class-header",
-        "class-footer",
-        "class-main",
-        "class-aside",
-        "class-section",
-        "class-article",
-        "class-iframe",
-        "class-br",
-        "class-hr",
-        "class-strong",
-        "class-em",
-        "class-b",
-        "class-i",
-        "class-small",
-        "class-code",
-        "class-pre"
+        "file:src/klan1/html/div.php",
+        "file:src/klan1/html/span.php",
+        "file:src/klan1/html/p.php",
+        "file:src/klan1/html/a.php",
+        "file:src/klan1/html/img.php",
+        "file:src/klan1/html/input.php",
+        "file:src/klan1/html/button.php",
+        "file:src/klan1/html/form.php",
+        "file:src/klan1/html/table.php",
+        "file:src/klan1/html/ul.php",
+        "file:src/klan1/html/ol.php",
+        "file:src/klan1/html/li.php",
+        "file:src/klan1/html/h1.php",
+        "file:src/klan1/html/h2.php",
+        "file:src/klan1/html/h3.php",
+        "file:src/klan1/html/h4.php",
+        "file:src/klan1/html/h5.php",
+        "file:src/klan1/html/h6.php",
+        "file:src/klan1/html/meta.php",
+        "file:src/klan1/html/title.php",
+        "file:src/klan1/html/link.php",
+        "file:src/klan1/html/script.php",
+        "file:src/klan1/html/style.php",
+        "file:src/klan1/html/select.php",
+        "file:src/klan1/html/option.php",
+        "file:src/klan1/html/textarea.php",
+        "file:src/klan1/html/label.php",
+        "file:src/klan1/html/legend.php",
+        "file:src/klan1/html/fieldset.php",
+        "file:src/klan1/html/nav.php",
+        "file:src/klan1/html/section.php",
+        "file:src/klan1/html/article.php",
+        "file:src/klan1/html/aside.php",
+        "file:src/klan1/html/header.php",
+        "file:src/klan1/html/footer.php",
+        "file:src/klan1/html/main.php",
+        "file:src/klan1/html/strong.php",
+        "file:src/klan1/html/em.php",
+        "file:src/klan1/html/i.php",
+        "file:src/klan1/html/b.php",
+        "file:src/klan1/html/small.php",
+        "file:src/klan1/html/code.php",
+        "file:src/klan1/html/pre.php",
+        "file:src/klan1/html/br.php",
+        "file:src/klan1/html/hr.php",
+        "file:src/klan1/html/iframe.php",
+        "file:src/klan1/html/caption.php",
+        "file:src/klan1/html/thead.php",
+        "file:src/klan1/html/tbody.php",
+        "file:src/klan1/html/tfoot.php",
+        "file:src/klan1/html/tr.php",
+        "file:src/klan1/html/th.php",
+        "file:src/klan1/html/td.php"
       ]
     },
     {
-      "id": "layer-utilities",
-      "name": "Utilities Layer",
-      "description": "Supporting systems like template loading and notifications",
+      "id": "layer:compatibility",
+      "name": "Compatibility",
+      "description": "Legacy wrappers and deprecated code.",
       "nodeIds": [
-        "class-template",
-        "class-common_code",
-        "class-on_DOM"
+        "file:src/klan1/html/DOM.php"
       ]
     },
     {
-      "id": "layer-concepts",
-      "name": "Concepts Layer",
-      "description": "Architectural patterns and concepts that guide the library design",
+      "id": "layer:utilities",
+      "name": "Utilities",
+      "description": "Template loading and notification systems.",
       "nodeIds": [
-        "concept-inheritance",
-        "concept-fluent-api",
-        "concept-inline-tags",
-        "concept-child-collections"
+        "file:src/klan1/html/template.php",
+        "file:src/klan1/html/notifications/common_code.php",
+        "file:src/klan1/html/notifications/on_DOM.php"
       ]
     },
     {
-      "id": "layer-modules",
-      "name": "Modules Layer",
-      "description": "High-level functional modules grouping related components",
+      "id": "layer:config",
+      "name": "Configuration",
+      "description": "Package configuration.",
       "nodeIds": [
-        "module-html-generation",
-        "module-tagging",
-        "module-child-management",
-        "module-notifications",
-        "module-template"
+        "config:composer.json"
+      ]
+    },
+    {
+      "id": "layer:docs",
+      "name": "Documentation",
+      "description": "Documentation and examples.",
+      "nodeIds": [
+        "file:README.md",
+        "file:CLAUDE.md",
+        "file:examples/01-basic-document.php"
+      ]
+    },
+    {
+      "id": "layer:concepts",
+      "name": "Concepts",
+      "description": "Architectural patterns.",
+      "nodeIds": [
+        "concept:inline-tags",
+        "concept:child-collections"
       ]
     }
   ],
   "tour": [
     {
       "order": 1,
-      "title": "Introduction to k1.lib-html",
-      "description": "k1.lib-html is a PHP library for generating HTML documents using an object-oriented, DOM-like approach. Every HTML tag is represented as a PHP object that can be nested, queried, and rendered to a string.",
+      "title": "Project Overview",
+      "description": "Start with README and composer config.",
       "nodeIds": [
-        "class-tag",
-        "class-html_document",
-        "class-DOM"
+        "file:README.md",
+        "config:composer.json"
       ]
     },
     {
       "order": 2,
-      "title": "Base Tag Class Architecture",
-      "description": "The tag class is the foundation of the entire library. It manages attributes, child collections (head, main, tail), and HTML generation. Each tag instance is registered in tag_catalog with a unique ID.",
+      "title": "Base Tag Class",
+      "description": "The tag class is the core foundation.",
       "nodeIds": [
-        "class-tag",
-        "class-tag_catalog",
-        "class-append_shotcuts"
+        "file:src/klan1/html/tag.php",
+        "concept:inline-tags"
       ]
     },
     {
       "order": 3,
-      "title": "HTML Element Classes",
-      "description": "All HTML elements (div, span, p, a, img, input, table, etc.) extend the base tag class. Each class calls parent::__construct() with the tag name and a self-closed flag.",
+      "title": "HTML Document",
+      "description": "Root document with auto charset/viewport.",
       "nodeIds": [
-        "class-div",
-        "class-input",
-        "class-table",
-        "class-form"
+        "file:src/klan1/html/html_document.php",
+        "file:src/klan1/html/head.php",
+        "file:src/klan1/html/body.php"
       ]
     },
     {
       "order": 4,
-      "title": "Child Element Management",
-      "description": "Tags maintain three child collections: childs_head (rendered first), childs (main), and childs_tail (rendered last). The append_shotcuts trait provides fluent methods like append_div(), append_p() for adding children.",
+      "title": "Tag Catalog",
+      "description": "Registry for unique tag IDs.",
       "nodeIds": [
-        "class-append_shotcuts",
-        "concept-child-collections"
+        "file:src/klan1/html/tag_catalog.php"
       ]
     },
     {
       "order": 5,
-      "title": "Inline Tag Embedding",
-      "description": "Tag objects can be embedded in text values. When a tag is used as a string, __toString() returns a {{ID:N}} placeholder which is replaced during generate() via parse_value().",
+      "title": "HTML Elements Catalog",
+      "description": "55+ individual tag classes.",
       "nodeIds": [
-        "concept-inline-tags",
-        "class-tag_catalog"
+        "file:src/klan1/html/div.php",
+        "file:src/klan1/html/a.php",
+        "file:src/klan1/html/form.php"
       ]
     },
     {
       "order": 6,
-      "title": "Document Structure",
-      "description": "html_document extends tag and represents the root <html> element. It automatically creates head and body children. DOM is a static compatibility wrapper for k1lib v1 code.",
+      "title": "Compatibility Layer",
+      "description": "Legacy DOM wrapper.",
       "nodeIds": [
-        "class-html_document",
-        "class-DOM",
-        "class-head",
-        "class-body"
+        "file:src/klan1/html/DOM.php"
       ]
     },
     {
       "order": 7,
-      "title": "Notifications System",
-      "description": "Session-based message queue for user notifications. common_code provides base functionality, on_DOM renders messages as Bootstrap alerts in the DOM.",
+      "title": "Notifications",
+      "description": "Session-based message queue.",
       "nodeIds": [
-        "class-common_code",
-        "class-on_DOM",
-        "module-notifications"
+        "file:src/klan1/html/notifications/common_code.php"
       ]
     },
     {
       "order": 8,
-      "title": "Template System",
-      "description": "Static template class for loading PHP template files from a configured directory. Uses DOM class internally for error handling.",
+      "title": "Example",
+      "description": "Working example.",
       "nodeIds": [
-        "class-template",
-        "file-template-php"
+        "file:examples/01-basic-document.php"
       ]
     }
   ]
