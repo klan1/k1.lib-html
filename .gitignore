@@ -1,7 +1,15 @@
 .DS_Store
 *.log
-vendor/
+/vendor/
 .vscode/
 .idea/
-nbproject/
+.nbproject/
 nb-configuration.xml
+
+# Development
+.config/
+.opencode/
+.understand-anything/
+
+# Graphify
+graphify-out/

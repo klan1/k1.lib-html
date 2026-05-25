@@ -10,11 +10,11 @@ k1lib.html is a PHP library (PHP 8.2+) that generates HTML documents using an ob
 
 ### Core Classes
 
+- **`DOM`** (`src/klan1/html/DOM.php`): Static Class that holds the first tag Object <html></html>. This is a helper to have a global access to the HTML page is been generated, developer could use or not.
 - **`tag`** (`src/klan1/html/tag.php`): The base class for all HTML elements. Manages attributes, child collections, inline tag resolution, and HTML generation. Every tag instance is registered in a global catalog (`tag_catalog`) and receives a unique ID.
-- **`html_document`** (`src/klan1/html/html_document.php`): Extends `tag`. Represents the root `<html>` element and automatically creates `<head>` and `<body>` children. Sets `tag::$root` to itself.
-- **`DOM`** (`src/klan1/html/DOM.php`): Static compatibility wrapper around `html_document` for k1lib v1 code.
 - **`tag_catalog`** (`src/klan1/html/tag_catalog.php`): Static registry that assigns unique IDs to all `tag` instances. Enables inline tag embedding and object lookup by ID.
 - **`tag_log`** (`src/klan1/html/tag_log.php`): Optional global action logger. Enabled via `html_document::set_use_log(true)`.
+- **`html_document`** (`src/klan1/html/html_document.php`): Extends `tag`. Represents the root `<html>` element and automatically creates `<head>` and `<body>` children. Sets `tag::$root` to itself.
 - **`append_shotcuts`** (`src/klan1/html/append_shotcuts.php`): Trait that provides fluent `append_div()`, `append_p()`, `append_span()`, etc., on any tag.
 
 ### Tag Implementations

@@ -16,7 +16,7 @@
       "type": "file",
       "name": "DOM.php",
       "filePath": "src/klan1/html/DOM.php",
-      "summary": "Static compatibility wrapper for k1lib v1 code",
+      "summary": "Static compatibility wrapper for k1lib v1 code. Provides static methods start(), is_started(), html(), and generate() to access the global html_document instance.",
       "tags": [
         "compatibility",
         "v1"
