@@ -13,5 +13,8 @@
         "psr-4": {
             "k1lib\\html\\": "src/klan1/html/"
         }
+    },
+    "scripts": {
+        "demo": "php -S localhost:8000 -t examples"
     }
 }

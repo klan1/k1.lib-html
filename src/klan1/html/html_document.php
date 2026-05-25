@@ -73,6 +73,7 @@ class html_document extends tag {
             $this->append_child($this->body);
         }
     }
+
     public function set_lang(string $lang): html_document {
         $this->lang = $lang;
         $this->set_attrib("lang", $this->lang);
@@ -126,14 +127,14 @@ class html_document extends tag {
      *
      * @return string
      */
-    public function generate(): string {
+    public function generate($with_childs = \TRUE, $n_childs = 0): string {
         if (empty($this->charset)) {
             $this->set_charset("utf-8");
         }
         if (empty($this->viewport)) {
             $this->set_viewport("width=device-width, initial-scale=1");
         }
-        return parent::generate();
+        return parent::generate($with_childs, $n_childs);
     }
 
     /**
