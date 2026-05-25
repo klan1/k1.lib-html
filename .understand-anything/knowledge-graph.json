@@ -1,1325 +1,1407 @@
 {
-    "version": "1.0.0",
-    "project": {
-        "name": "k1lib.html",
-        "languages": [
-            "php"
-        ],
-        "frameworks": [],
-        "description": "A PHP 8.2+ library that generates HTML documents using an object-oriented, DOM-like approach. Every HTML tag is represented by a PHP object that can be nested, queried, and rendered to a string.",
-        "analyzedAt": "2026-05-25T14:17:10+00:00",
-        "gitCommitHash": "4650d759f28c6cfc945db11363174ad54115661c"
+  "version": "1.0.0",
+  "project": {
+    "name": "k1.lib-html",
+    "languages": [
+      "php"
+    ],
+    "frameworks": [],
+    "description": "PHP 8.2+ library for generating HTML documents with OOP DOM-like approach",
+    "analyzedAt": "2026-05-25T03:00:00.000Z",
+    "gitCommitHash": "b4ebce6197a36d7b8c9fc0473d3cb9ffd6da2112"
+  },
+  "nodes": [
+    {
+      "id": "file:src/klan1/html/DOM.php",
+      "type": "file",
+      "name": "DOM.php",
+      "filePath": "src/klan1/html/DOM.php",
+      "summary": "Static compatibility wrapper for k1lib v1 code",
+      "tags": [
+        "compatibility",
+        "v1"
+      ]
     },
-    "nodes": [
-        {
-            "id": "src_klan1_html_DOM",
-            "type": "class-static",
-            "name": "DOM",
-            "filePath": "src/klan1/html/DOM.php",
-            "summary": "/",
-            "tags": [
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>"
-            ]
-        },
-        {
-            "id": "src_klan1_html_a",
-            "type": "class-tag",
-            "name": "a",
-            "filePath": "src/klan1/html/a.php",
-            "summary": "/",
-            "tags": [
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@html-tag a",
-                "@extends tag"
-            ]
-        },
-        {
-            "id": "src_klan1_html_append_shotcuts",
-            "type": "script",
-            "name": "append_shotcuts",
-            "filePath": "src/klan1/html/append_shotcuts.php",
-            "summary": "Common tag Objects append operations",
-            "tags": [
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>"
-            ]
-        },
-        {
-            "id": "src_klan1_html_article",
-            "type": "class-tag",
-            "name": "article",
-            "filePath": "src/klan1/html/article.php",
-            "summary": "/",
-            "tags": [
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@html-tag article",
-                "@extends tag"
-            ]
-        },
-        {
-            "id": "src_klan1_html_aside",
-            "type": "class-tag",
-            "name": "aside",
-            "filePath": "src/klan1/html/aside.php",
-            "summary": "/",
-            "tags": [
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@html-tag aside",
-                "@extends tag"
-            ]
-        },
-        {
-            "id": "src_klan1_html_b",
-            "type": "class-tag",
-            "name": "b",
-            "filePath": "src/klan1/html/b.php",
-            "summary": "/",
-            "tags": [
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@html-tag b",
-                "@extends tag"
-            ]
-        },
-        {
-            "id": "src_klan1_html_body",
-            "type": "class-tag",
-            "name": "body",
-            "filePath": "src/klan1/html/body.php",
-            "summary": "/",
-            "tags": [
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@html-tag body",
-                "@extends tag"
-            ]
-        },
-        {
-            "id": "src_klan1_html_br",
-            "type": "class-tag",
-            "name": "br",
-            "filePath": "src/klan1/html/br.php",
-            "summary": "/",
-            "tags": [
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@html-tag br",
-                "@extends tag"
-            ]
-        },
-        {
-            "id": "src_klan1_html_button",
-            "type": "class-tag",
-            "name": "button",
-            "filePath": "src/klan1/html/button.php",
-            "summary": "/",
-            "tags": [
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@html-tag button",
-                "@extends tag"
-            ]
-        },
-        {
-            "id": "src_klan1_html_caption",
-            "type": "class-tag",
-            "name": "caption",
-            "filePath": "src/klan1/html/caption.php",
-            "summary": "/",
-            "tags": [
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@html-tag caption",
-                "@extends tag"
-            ]
-        },
-        {
-            "id": "src_klan1_html_code",
-            "type": "class-tag",
-            "name": "code",
-            "filePath": "src/klan1/html/code.php",
-            "summary": "/",
-            "tags": [
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@html-tag code",
-                "@extends tag"
-            ]
-        },
-        {
-            "id": "src_klan1_html_div",
-            "type": "class-tag",
-            "name": "div",
-            "filePath": "src/klan1/html/div.php",
-            "summary": "/",
-            "tags": [
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@html-tag div",
-                "@extends tag"
-            ]
-        },
-        {
-            "id": "src_klan1_html_em",
-            "type": "class-tag",
-            "name": "em",
-            "filePath": "src/klan1/html/em.php",
-            "summary": "/",
-            "tags": [
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@html-tag em",
-                "@extends tag"
-            ]
-        },
-        {
-            "id": "src_klan1_html_fieldset",
-            "type": "class-tag",
-            "name": "fieldset",
-            "filePath": "src/klan1/html/fieldset.php",
-            "summary": "/",
-            "tags": [
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@html-tag fieldset",
-                "@extends tag"
-            ]
-        },
-        {
-            "id": "src_klan1_html_footer",
-            "type": "class-tag",
-            "name": "footer",
-            "filePath": "src/klan1/html/footer.php",
-            "summary": "/",
-            "tags": [
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@html-tag footer",
-                "@extends tag"
-            ]
-        },
-        {
-            "id": "src_klan1_html_form",
-            "type": "class-tag",
-            "name": "form",
-            "filePath": "src/klan1/html/form.php",
-            "summary": "/",
-            "tags": [
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@html-tag form",
-                "@extends tag"
-            ]
-        },
-        {
-            "id": "src_klan1_html_h1",
-            "type": "class-tag",
-            "name": "h1",
-            "filePath": "src/klan1/html/h1.php",
-            "summary": "/",
-            "tags": [
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@html-tag h1",
-                "@extends tag"
-            ]
-        },
-        {
-            "id": "src_klan1_html_h2",
-            "type": "class-tag",
-            "name": "h2",
-            "filePath": "src/klan1/html/h2.php",
-            "summary": "/",
-            "tags": [
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@html-tag h2",
-                "@extends tag"
-            ]
-        },
-        {
-            "id": "src_klan1_html_h3",
-            "type": "class-tag",
-            "name": "h3",
-            "filePath": "src/klan1/html/h3.php",
-            "summary": "/",
-            "tags": [
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@html-tag h3",
-                "@extends tag"
-            ]
-        },
-        {
-            "id": "src_klan1_html_h4",
-            "type": "class-tag",
-            "name": "h4",
-            "filePath": "src/klan1/html/h4.php",
-            "summary": "HTML <h4> heading element",
-            "tags": [
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@html-tag h4",
-                "@extends tag"
-            ]
-        },
-        {
-            "id": "src_klan1_html_h5",
-            "type": "class-tag",
-            "name": "h5",
-            "filePath": "src/klan1/html/h5.php",
-            "summary": "HTML <h5> heading element",
-            "tags": [
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@html-tag h5",
-                "@extends tag"
-            ]
-        },
-        {
-            "id": "src_klan1_html_h6",
-            "type": "class-tag",
-            "name": "h6",
-            "filePath": "src/klan1/html/h6.php",
-            "summary": "HTML <h6> heading element",
-            "tags": [
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@html-tag h6",
-                "@extends tag"
-            ]
-        },
-        {
-            "id": "src_klan1_html_head",
-            "type": "class-tag",
-            "name": "head",
-            "filePath": "src/klan1/html/head.php",
-            "summary": "/",
-            "tags": [
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@html-tag head",
-                "@extends tag"
-            ]
-        },
-        {
-            "id": "src_klan1_html_header",
-            "type": "class-tag",
-            "name": "header",
-            "filePath": "src/klan1/html/header.php",
-            "summary": "/",
-            "tags": [
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@html-tag header",
-                "@extends tag"
-            ]
-        },
-        {
-            "id": "src_klan1_html_hr",
-            "type": "class-tag",
-            "name": "hr",
-            "filePath": "src/klan1/html/hr.php",
-            "summary": "/",
-            "tags": [
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@html-tag hr",
-                "@extends tag"
-            ]
-        },
-        {
-            "id": "src_klan1_html_html_document",
-            "type": "class-core",
-            "name": "html_document",
-            "filePath": "src/klan1/html/html_document.php",
-            "summary": "/",
-            "tags": [
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@html-tag html",
-                "@extends tag"
-            ]
-        },
-        {
-            "id": "src_klan1_html_i",
-            "type": "class-tag",
-            "name": "i",
-            "filePath": "src/klan1/html/i.php",
-            "summary": "/",
-            "tags": [
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@html-tag i",
-                "@extends tag"
-            ]
-        },
-        {
-            "id": "src_klan1_html_iframe",
-            "type": "class-tag",
-            "name": "iframe",
-            "filePath": "src/klan1/html/iframe.php",
-            "summary": "/",
-            "tags": [
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@html-tag iframe",
-                "@extends tag"
-            ]
-        },
-        {
-            "id": "src_klan1_html_img",
-            "type": "class-tag",
-            "name": "img",
-            "filePath": "src/klan1/html/img.php",
-            "summary": "/",
-            "tags": [
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@html-tag img",
-                "@extends tag"
-            ]
-        },
-        {
-            "id": "src_klan1_html_input",
-            "type": "class-tag",
-            "name": "input",
-            "filePath": "src/klan1/html/input.php",
-            "summary": "/",
-            "tags": [
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@html-tag input",
-                "@extends tag"
-            ]
-        },
-        {
-            "id": "src_klan1_html_label",
-            "type": "class-tag",
-            "name": "label",
-            "filePath": "src/klan1/html/label.php",
-            "summary": "/",
-            "tags": [
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@html-tag label",
-                "@extends tag"
-            ]
-        },
-        {
-            "id": "src_klan1_html_legend",
-            "type": "class-tag",
-            "name": "legend",
-            "filePath": "src/klan1/html/legend.php",
-            "summary": "/",
-            "tags": [
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@html-tag legend",
-                "@extends tag"
-            ]
-        },
-        {
-            "id": "src_klan1_html_li",
-            "type": "class-tag",
-            "name": "li",
-            "filePath": "src/klan1/html/li.php",
-            "summary": "/",
-            "tags": [
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@html-tag li",
-                "@extends tag"
-            ]
-        },
-        {
-            "id": "src_klan1_html_link",
-            "type": "class-tag",
-            "name": "link",
-            "filePath": "src/klan1/html/link.php",
-            "summary": "/",
-            "tags": [
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@html-tag link",
-                "@extends tag"
-            ]
-        },
-        {
-            "id": "src_klan1_html_main",
-            "type": "class-tag",
-            "name": "main",
-            "filePath": "src/klan1/html/main.php",
-            "summary": "/",
-            "tags": [
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@html-tag main",
-                "@extends tag"
-            ]
-        },
-        {
-            "id": "src_klan1_html_meta",
-            "type": "class-tag",
-            "name": "meta",
-            "filePath": "src/klan1/html/meta.php",
-            "summary": "/",
-            "tags": [
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@html-tag meta",
-                "@extends tag"
-            ]
-        },
-        {
-            "id": "src_klan1_html_nav",
-            "type": "class-tag",
-            "name": "nav",
-            "filePath": "src/klan1/html/nav.php",
-            "summary": "/",
-            "tags": [
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@html-tag nav",
-                "@extends tag"
-            ]
-        },
-        {
-            "id": "src_klan1_html_notifications_common_code",
-            "type": "class-support",
-            "name": "common_code",
-            "filePath": "src/klan1/html/notifications/common_code.php",
-            "summary": "On screen solution for show messages to user.",
-            "tags": [
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@package notifications",
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>"
-            ]
-        },
-        {
-            "id": "src_klan1_html_notifications_on_DOM",
-            "type": "class-support",
-            "name": "on_DOM",
-            "filePath": "src/klan1/html/notifications/on_DOM.php",
-            "summary": "On screen solution for show messages to user.",
-            "tags": [
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@package notifications",
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@extends common_code"
-            ]
-        },
-        {
-            "id": "src_klan1_html_ol",
-            "type": "class-tag",
-            "name": "ol",
-            "filePath": "src/klan1/html/ol.php",
-            "summary": "/",
-            "tags": [
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@html-tag ol",
-                "@extends tag"
-            ]
-        },
-        {
-            "id": "src_klan1_html_option",
-            "type": "class-tag",
-            "name": "option",
-            "filePath": "src/klan1/html/option.php",
-            "summary": "/",
-            "tags": [
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@html-tag option",
-                "@extends tag"
-            ]
-        },
-        {
-            "id": "src_klan1_html_p",
-            "type": "class-tag",
-            "name": "p",
-            "filePath": "src/klan1/html/p.php",
-            "summary": "/",
-            "tags": [
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@html-tag p",
-                "@extends tag"
-            ]
-        },
-        {
-            "id": "src_klan1_html_pre",
-            "type": "class-tag",
-            "name": "pre",
-            "filePath": "src/klan1/html/pre.php",
-            "summary": "/",
-            "tags": [
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@html-tag pre",
-                "@extends tag"
-            ]
-        },
-        {
-            "id": "src_klan1_html_script",
-            "type": "class-tag",
-            "name": "script",
-            "filePath": "src/klan1/html/script.php",
-            "summary": "/",
-            "tags": [
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@html-tag script",
-                "@extends tag"
-            ]
-        },
-        {
-            "id": "src_klan1_html_section",
-            "type": "class-tag",
-            "name": "section",
-            "filePath": "src/klan1/html/section.php",
-            "summary": "/",
-            "tags": [
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@html-tag section",
-                "@extends tag"
-            ]
-        },
-        {
-            "id": "src_klan1_html_select",
-            "type": "class-tag",
-            "name": "select",
-            "filePath": "src/klan1/html/select.php",
-            "summary": "/",
-            "tags": [
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@html-tag select",
-                "@extends tag"
-            ]
-        },
-        {
-            "id": "src_klan1_html_small",
-            "type": "class-tag",
-            "name": "small",
-            "filePath": "src/klan1/html/small.php",
-            "summary": "/",
-            "tags": [
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@html-tag small",
-                "@extends tag"
-            ]
-        },
-        {
-            "id": "src_klan1_html_span",
-            "type": "class-tag",
-            "name": "span",
-            "filePath": "src/klan1/html/span.php",
-            "summary": "/",
-            "tags": [
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@html-tag span",
-                "@extends tag"
-            ]
-        },
-        {
-            "id": "src_klan1_html_strong",
-            "type": "class-tag",
-            "name": "strong",
-            "filePath": "src/klan1/html/strong.php",
-            "summary": "/",
-            "tags": [
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@html-tag strong",
-                "@extends tag"
-            ]
-        },
-        {
-            "id": "src_klan1_html_style",
-            "type": "class-tag",
-            "name": "style",
-            "filePath": "src/klan1/html/style.php",
-            "summary": "/",
-            "tags": [
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@html-tag style",
-                "@extends tag"
-            ]
-        },
-        {
-            "id": "src_klan1_html_table",
-            "type": "class-tag",
-            "name": "table",
-            "filePath": "src/klan1/html/table.php",
-            "summary": "/",
-            "tags": [
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@html-tag table",
-                "@extends tag"
-            ]
-        },
-        {
-            "id": "src_klan1_html_tag",
-            "type": "class-core",
-            "name": "tag",
-            "filePath": "src/klan1/html/tag.php",
-            "summary": "/",
-            "tags": [
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>"
-            ]
-        },
-        {
-            "id": "src_klan1_html_tag_catalog",
-            "type": "class-support",
-            "name": "tag_catalog",
-            "filePath": "src/klan1/html/tag_catalog.php",
-            "summary": "/",
-            "tags": [
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>"
-            ]
-        },
-        {
-            "id": "src_klan1_html_tag_log",
-            "type": "class-support",
-            "name": "tag_log",
-            "filePath": "src/klan1/html/tag_log.php",
-            "summary": "/",
-            "tags": [
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>"
-            ]
-        },
-        {
-            "id": "src_klan1_html_tbody",
-            "type": "class-tag",
-            "name": "tbody",
-            "filePath": "src/klan1/html/tbody.php",
-            "summary": "/",
-            "tags": [
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@html-tag tbody",
-                "@extends tag"
-            ]
-        },
-        {
-            "id": "src_klan1_html_td",
-            "type": "class-tag",
-            "name": "td",
-            "filePath": "src/klan1/html/td.php",
-            "summary": "/",
-            "tags": [
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@html-tag td",
-                "@extends tag"
-            ]
-        },
-        {
-            "id": "src_klan1_html_template",
-            "type": "class-static",
-            "name": "template",
-            "filePath": "src/klan1/html/template.php",
-            "summary": "/",
-            "tags": [
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>"
-            ]
-        },
-        {
-            "id": "src_klan1_html_textarea",
-            "type": "class-tag",
-            "name": "textarea",
-            "filePath": "src/klan1/html/textarea.php",
-            "summary": "/",
-            "tags": [
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@html-tag textarea",
-                "@extends tag"
-            ]
-        },
-        {
-            "id": "src_klan1_html_tfoot",
-            "type": "class-tag",
-            "name": "tfoot",
-            "filePath": "src/klan1/html/tfoot.php",
-            "summary": "/",
-            "tags": [
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@html-tag tfoot",
-                "@extends tag"
-            ]
-        },
-        {
-            "id": "src_klan1_html_th",
-            "type": "class-tag",
-            "name": "th",
-            "filePath": "src/klan1/html/th.php",
-            "summary": "/",
-            "tags": [
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@html-tag th",
-                "@extends tag"
-            ]
-        },
-        {
-            "id": "src_klan1_html_thead",
-            "type": "class-tag",
-            "name": "thead",
-            "filePath": "src/klan1/html/thead.php",
-            "summary": "/",
-            "tags": [
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@html-tag thead",
-                "@extends tag"
-            ]
-        },
-        {
-            "id": "src_klan1_html_title",
-            "type": "class-tag",
-            "name": "title",
-            "filePath": "src/klan1/html/title.php",
-            "summary": "/",
-            "tags": [
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@html-tag title",
-                "@extends tag"
-            ]
-        },
-        {
-            "id": "src_klan1_html_tr",
-            "type": "class-tag",
-            "name": "tr",
-            "filePath": "src/klan1/html/tr.php",
-            "summary": "/",
-            "tags": [
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@html-tag tr",
-                "@extends tag"
-            ]
-        },
-        {
-            "id": "src_klan1_html_ul",
-            "type": "class-tag",
-            "name": "ul",
-            "filePath": "src/klan1/html/ul.php",
-            "summary": "/",
-            "tags": [
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@author Alejandro Trujillo J. <https://github.com/j0hnd03>",
-                "@html-tag ul",
-                "@extends tag"
-            ]
-        }
-    ],
-    "edges": [
-        {
-            "source": "src_klan1_html_a",
-            "target": "src_klan1_html_tag",
-            "type": "extends",
-            "weight": 1
-        },
-        {
-            "source": "src_klan1_html_article",
-            "target": "src_klan1_html_tag",
-            "type": "extends",
-            "weight": 1
-        },
-        {
-            "source": "src_klan1_html_aside",
-            "target": "src_klan1_html_tag",
-            "type": "extends",
-            "weight": 1
-        },
-        {
-            "source": "src_klan1_html_b",
-            "target": "src_klan1_html_tag",
-            "type": "extends",
-            "weight": 1
-        },
-        {
-            "source": "src_klan1_html_body",
-            "target": "src_klan1_html_tag",
-            "type": "extends",
-            "weight": 1
-        },
-        {
-            "source": "src_klan1_html_br",
-            "target": "src_klan1_html_tag",
-            "type": "extends",
-            "weight": 1
-        },
-        {
-            "source": "src_klan1_html_button",
-            "target": "src_klan1_html_tag",
-            "type": "extends",
-            "weight": 1
-        },
-        {
-            "source": "src_klan1_html_caption",
-            "target": "src_klan1_html_tag",
-            "type": "extends",
-            "weight": 1
-        },
-        {
-            "source": "src_klan1_html_code",
-            "target": "src_klan1_html_tag",
-            "type": "extends",
-            "weight": 1
-        },
-        {
-            "source": "src_klan1_html_div",
-            "target": "src_klan1_html_tag",
-            "type": "extends",
-            "weight": 1
-        },
-        {
-            "source": "src_klan1_html_em",
-            "target": "src_klan1_html_tag",
-            "type": "extends",
-            "weight": 1
-        },
-        {
-            "source": "src_klan1_html_fieldset",
-            "target": "src_klan1_html_tag",
-            "type": "extends",
-            "weight": 1
-        },
-        {
-            "source": "src_klan1_html_footer",
-            "target": "src_klan1_html_tag",
-            "type": "extends",
-            "weight": 1
-        },
-        {
-            "source": "src_klan1_html_form",
-            "target": "src_klan1_html_tag",
-            "type": "extends",
-            "weight": 1
-        },
-        {
-            "source": "src_klan1_html_h1",
-            "target": "src_klan1_html_tag",
-            "type": "extends",
-            "weight": 1
-        },
-        {
-            "source": "src_klan1_html_h2",
-            "target": "src_klan1_html_tag",
-            "type": "extends",
-            "weight": 1
-        },
-        {
-            "source": "src_klan1_html_h3",
-            "target": "src_klan1_html_tag",
-            "type": "extends",
-            "weight": 1
-        },
-        {
-            "source": "src_klan1_html_h4",
-            "target": "src_klan1_html_tag",
-            "type": "extends",
-            "weight": 1
-        },
-        {
-            "source": "src_klan1_html_h5",
-            "target": "src_klan1_html_tag",
-            "type": "extends",
-            "weight": 1
-        },
-        {
-            "source": "src_klan1_html_h6",
-            "target": "src_klan1_html_tag",
-            "type": "extends",
-            "weight": 1
-        },
-        {
-            "source": "src_klan1_html_head",
-            "target": "src_klan1_html_tag",
-            "type": "extends",
-            "weight": 1
-        },
-        {
-            "source": "src_klan1_html_header",
-            "target": "src_klan1_html_tag",
-            "type": "extends",
-            "weight": 1
-        },
-        {
-            "source": "src_klan1_html_hr",
-            "target": "src_klan1_html_tag",
-            "type": "extends",
-            "weight": 1
-        },
-        {
-            "source": "src_klan1_html_html_document",
-            "target": "src_klan1_html_tag",
-            "type": "extends",
-            "weight": 1
-        },
-        {
-            "source": "src_klan1_html_i",
-            "target": "src_klan1_html_tag",
-            "type": "extends",
-            "weight": 1
-        },
-        {
-            "source": "src_klan1_html_iframe",
-            "target": "src_klan1_html_tag",
-            "type": "extends",
-            "weight": 1
-        },
-        {
-            "source": "src_klan1_html_img",
-            "target": "src_klan1_html_tag",
-            "type": "extends",
-            "weight": 1
-        },
-        {
-            "source": "src_klan1_html_input",
-            "target": "src_klan1_html_tag",
-            "type": "extends",
-            "weight": 1
-        },
-        {
-            "source": "src_klan1_html_label",
-            "target": "src_klan1_html_tag",
-            "type": "extends",
-            "weight": 1
-        },
-        {
-            "source": "src_klan1_html_legend",
-            "target": "src_klan1_html_tag",
-            "type": "extends",
-            "weight": 1
-        },
-        {
-            "source": "src_klan1_html_li",
-            "target": "src_klan1_html_tag",
-            "type": "extends",
-            "weight": 1
-        },
-        {
-            "source": "src_klan1_html_link",
-            "target": "src_klan1_html_tag",
-            "type": "extends",
-            "weight": 1
-        },
-        {
-            "source": "src_klan1_html_main",
-            "target": "src_klan1_html_tag",
-            "type": "extends",
-            "weight": 1
-        },
-        {
-            "source": "src_klan1_html_meta",
-            "target": "src_klan1_html_tag",
-            "type": "extends",
-            "weight": 1
-        },
-        {
-            "source": "src_klan1_html_nav",
-            "target": "src_klan1_html_tag",
-            "type": "extends",
-            "weight": 1
-        },
-        {
-            "source": "src_klan1_html_notifications_on_DOM",
-            "target": "src_klan1_html_notifications_common_code",
-            "type": "extends",
-            "weight": 1
-        },
-        {
-            "source": "src_klan1_html_ol",
-            "target": "src_klan1_html_tag",
-            "type": "extends",
-            "weight": 1
-        },
-        {
-            "source": "src_klan1_html_option",
-            "target": "src_klan1_html_tag",
-            "type": "extends",
-            "weight": 1
-        },
-        {
-            "source": "src_klan1_html_p",
-            "target": "src_klan1_html_tag",
-            "type": "extends",
-            "weight": 1
-        },
-        {
-            "source": "src_klan1_html_pre",
-            "target": "src_klan1_html_tag",
-            "type": "extends",
-            "weight": 1
-        },
-        {
-            "source": "src_klan1_html_script",
-            "target": "src_klan1_html_tag",
-            "type": "extends",
-            "weight": 1
-        },
-        {
-            "source": "src_klan1_html_section",
-            "target": "src_klan1_html_tag",
-            "type": "extends",
-            "weight": 1
-        },
-        {
-            "source": "src_klan1_html_select",
-            "target": "src_klan1_html_tag",
-            "type": "extends",
-            "weight": 1
-        },
-        {
-            "source": "src_klan1_html_small",
-            "target": "src_klan1_html_tag",
-            "type": "extends",
-            "weight": 1
-        },
-        {
-            "source": "src_klan1_html_span",
-            "target": "src_klan1_html_tag",
-            "type": "extends",
-            "weight": 1
-        },
-        {
-            "source": "src_klan1_html_strong",
-            "target": "src_klan1_html_tag",
-            "type": "extends",
-            "weight": 1
-        },
-        {
-            "source": "src_klan1_html_style",
-            "target": "src_klan1_html_tag",
-            "type": "extends",
-            "weight": 1
-        },
-        {
-            "source": "src_klan1_html_table",
-            "target": "src_klan1_html_tag",
-            "type": "extends",
-            "weight": 1
-        },
-        {
-            "source": "src_klan1_html_tbody",
-            "target": "src_klan1_html_tag",
-            "type": "extends",
-            "weight": 1
-        },
-        {
-            "source": "src_klan1_html_td",
-            "target": "src_klan1_html_tag",
-            "type": "extends",
-            "weight": 1
-        },
-        {
-            "source": "src_klan1_html_textarea",
-            "target": "src_klan1_html_tag",
-            "type": "extends",
-            "weight": 1
-        },
-        {
-            "source": "src_klan1_html_tfoot",
-            "target": "src_klan1_html_tag",
-            "type": "extends",
-            "weight": 1
-        },
-        {
-            "source": "src_klan1_html_th",
-            "target": "src_klan1_html_tag",
-            "type": "extends",
-            "weight": 1
-        },
-        {
-            "source": "src_klan1_html_thead",
-            "target": "src_klan1_html_tag",
-            "type": "extends",
-            "weight": 1
-        },
-        {
-            "source": "src_klan1_html_title",
-            "target": "src_klan1_html_tag",
-            "type": "extends",
-            "weight": 1
-        },
-        {
-            "source": "src_klan1_html_tr",
-            "target": "src_klan1_html_tag",
-            "type": "extends",
-            "weight": 1
-        },
-        {
-            "source": "src_klan1_html_ul",
-            "target": "src_klan1_html_tag",
-            "type": "extends",
-            "weight": 1
-        }
-    ],
-    "layers": [
-        {
-            "id": "layer-core",
-            "name": "Core Framework",
-            "description": "Foundation classes: tag, html_document, tag_catalog, tag_log, DOM wrapper, template system, notifications, and append shortcuts trait.",
-            "nodeIds": [
-                "src_klan1_html_html_document",
-                "src_klan1_html_tag"
-            ]
-        },
-        {
-            "id": "layer-html-tags",
-            "name": "HTML Tag Classes",
-            "description": "All HTML tag implementations that extend the base tag class (div, p, span, table, input, etc.).",
-            "nodeIds": [
-                "src_klan1_html_a",
-                "src_klan1_html_article",
-                "src_klan1_html_aside",
-                "src_klan1_html_b",
-                "src_klan1_html_body",
-                "src_klan1_html_br",
-                "src_klan1_html_button",
-                "src_klan1_html_caption",
-                "src_klan1_html_code",
-                "src_klan1_html_div",
-                "src_klan1_html_em",
-                "src_klan1_html_fieldset",
-                "src_klan1_html_footer",
-                "src_klan1_html_form",
-                "src_klan1_html_h1",
-                "src_klan1_html_h2",
-                "src_klan1_html_h3",
-                "src_klan1_html_h4",
-                "src_klan1_html_h5",
-                "src_klan1_html_h6",
-                "src_klan1_html_head",
-                "src_klan1_html_header",
-                "src_klan1_html_hr",
-                "src_klan1_html_i",
-                "src_klan1_html_iframe",
-                "src_klan1_html_img",
-                "src_klan1_html_input",
-                "src_klan1_html_label",
-                "src_klan1_html_legend",
-                "src_klan1_html_li",
-                "src_klan1_html_link",
-                "src_klan1_html_main",
-                "src_klan1_html_meta",
-                "src_klan1_html_nav",
-                "src_klan1_html_ol",
-                "src_klan1_html_option",
-                "src_klan1_html_p",
-                "src_klan1_html_pre",
-                "src_klan1_html_script",
-                "src_klan1_html_section",
-                "src_klan1_html_select",
-                "src_klan1_html_small",
-                "src_klan1_html_span",
-                "src_klan1_html_strong",
-                "src_klan1_html_style",
-                "src_klan1_html_table",
-                "src_klan1_html_tbody",
-                "src_klan1_html_td",
-                "src_klan1_html_textarea",
-                "src_klan1_html_tfoot",
-                "src_klan1_html_th",
-                "src_klan1_html_thead",
-                "src_klan1_html_title",
-                "src_klan1_html_tr",
-                "src_klan1_html_ul"
-            ]
-        },
-        {
-            "id": "layer-static-support",
-            "name": "Static Utilities & Support",
-            "description": "Static helper classes, template loader, notification system, and other supporting modules.",
-            "nodeIds": [
-                "src_klan1_html_DOM",
-                "src_klan1_html_template",
-                "src_klan1_html_append_shotcuts",
-                "src_klan1_html_notifications_common_code",
-                "src_klan1_html_notifications_on_DOM",
-                "src_klan1_html_tag_catalog",
-                "src_klan1_html_tag_log"
-            ]
-        }
-    ],
-    "tour": [
-        {
-            "order": 1,
-            "title": "The tag Base Class",
-            "description": "Start with tag.php \u2014 the heart of the library. It defines the tag class that manages attributes, child collections (head, main, tail), inline embedding via {{ID:N}}, and HTML generation.",
-            "nodeIds": [
-                "src_klan1_html_tag"
-            ]
-        },
-        {
-            "order": 2,
-            "title": "Document & DOM Wrapper",
-            "description": "Explore html_document.php which extends tag and auto-creates head/body children. Then DOM.php, a static compatibility wrapper for v1 code that provides global access to the HTML document.",
-            "nodeIds": [
-                "src_klan1_html_html_document",
-                "src_klan1_html_DOM"
-            ]
-        },
-        {
-            "order": 3,
-            "title": "Traits & Catalog",
-            "description": "Understand append_shotcuts.php that adds fluent append_div(), append_p(), etc. And tag_catalog.php which assigns unique IDs to every tag for inline embedding and lookup.",
-            "nodeIds": [
-                "src_klan1_html_append_shotcuts",
-                "src_klan1_html_tag_catalog"
-            ]
-        },
-        {
-            "order": 4,
-            "title": "Template & Notifications",
-            "description": "Review template.php for loading PHP template files, and the notifications system (common_code.php + on_DOM.php) for session-based message queues rendered as DOM alerts.",
-            "nodeIds": [
-                "src_klan1_html_template",
-                "src_klan1_html_notifications_common_code",
-                "src_klan1_html_notifications_on_DOM"
-            ]
-        },
-        {
-            "order": 5,
-            "title": "HTML Tag Implementations",
-            "description": "Browse the tag classes \u2014 each standard HTML element has its own class extending tag. Notable examples include div, p, span, table, input, form, a, img, and script.",
-            "nodeIds": [
-                "src_klan1_html_a",
-                "src_klan1_html_article",
-                "src_klan1_html_aside",
-                "src_klan1_html_b",
-                "src_klan1_html_body",
-                "src_klan1_html_br",
-                "src_klan1_html_button",
-                "src_klan1_html_caption",
-                "src_klan1_html_code",
-                "src_klan1_html_div",
-                "src_klan1_html_em",
-                "src_klan1_html_fieldset",
-                "src_klan1_html_footer",
-                "src_klan1_html_form",
-                "src_klan1_html_h1"
-            ]
-        }
-    ]
+    {
+      "id": "file:src/klan1/html/a.php",
+      "type": "file",
+      "name": "a.php",
+      "filePath": "src/klan1/html/a.php",
+      "summary": "HTML <a> anchor element",
+      "tags": [
+        "php",
+        "@author",
+        "@author"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/append_shotcuts.php",
+      "type": "file",
+      "name": "append_shotcuts.php",
+      "filePath": "src/klan1/html/append_shotcuts.php",
+      "summary": "Trait providing fluent append methods on any tag",
+      "tags": [
+        "trait",
+        "fluent-api"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/article.php",
+      "type": "file",
+      "name": "article.php",
+      "filePath": "src/klan1/html/article.php",
+      "summary": "Create an ARTICLE html tag with VALUE as data.",
+      "tags": [
+        "php",
+        "@author",
+        "@author"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/aside.php",
+      "type": "file",
+      "name": "aside.php",
+      "filePath": "src/klan1/html/aside.php",
+      "summary": "Create an ASIDE html tag with VALUE as data.",
+      "tags": [
+        "php",
+        "@author",
+        "@author"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/b.php",
+      "type": "file",
+      "name": "b.php",
+      "filePath": "src/klan1/html/b.php",
+      "summary": "HTML <b> bold text element",
+      "tags": [
+        "php",
+        "@author",
+        "@author"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/body.php",
+      "type": "file",
+      "name": "body.php",
+      "filePath": "src/klan1/html/body.php",
+      "summary": "HTML body element",
+      "tags": [
+        "core",
+        "document-structure"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/br.php",
+      "type": "file",
+      "name": "br.php",
+      "filePath": "src/klan1/html/br.php",
+      "summary": "HTML <br> line break element",
+      "tags": [
+        "php",
+        "@author",
+        "@author",
+        "self-closed"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/button.php",
+      "type": "file",
+      "name": "button.php",
+      "filePath": "src/klan1/html/button.php",
+      "summary": "HTML <button> element",
+      "tags": [
+        "php",
+        "@author",
+        "@author"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/caption.php",
+      "type": "file",
+      "name": "caption.php",
+      "filePath": "src/klan1/html/caption.php",
+      "summary": "HTML <caption> table caption element",
+      "tags": [
+        "php",
+        "@author",
+        "@author"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/code.php",
+      "type": "file",
+      "name": "code.php",
+      "filePath": "src/klan1/html/code.php",
+      "summary": "HTML <code> inline code element",
+      "tags": [
+        "php",
+        "@author",
+        "@author"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/div.php",
+      "type": "file",
+      "name": "div.php",
+      "filePath": "src/klan1/html/div.php",
+      "summary": "Create a DIV html tag with VALUE as data. Use $div->set_value($data)",
+      "tags": [
+        "php",
+        "@author",
+        "@author"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/em.php",
+      "type": "file",
+      "name": "em.php",
+      "filePath": "src/klan1/html/em.php",
+      "summary": "HTML <em> emphasis element",
+      "tags": [
+        "php",
+        "@author",
+        "@author"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/fieldset.php",
+      "type": "file",
+      "name": "fieldset.php",
+      "filePath": "src/klan1/html/fieldset.php",
+      "summary": "HTML <fieldset> element",
+      "tags": [
+        "php",
+        "@author",
+        "@author"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/footer.php",
+      "type": "file",
+      "name": "footer.php",
+      "filePath": "src/klan1/html/footer.php",
+      "summary": "Create a FOOTER html tag with VALUE as data.",
+      "tags": [
+        "php",
+        "@author",
+        "@author"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/form.php",
+      "type": "file",
+      "name": "form.php",
+      "filePath": "src/klan1/html/form.php",
+      "summary": "HTML <form> element",
+      "tags": [
+        "php",
+        "@author",
+        "@author"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/h1.php",
+      "type": "file",
+      "name": "h1.php",
+      "filePath": "src/klan1/html/h1.php",
+      "summary": "HTML <h1> heading element",
+      "tags": [
+        "php",
+        "@author",
+        "@author"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/h2.php",
+      "type": "file",
+      "name": "h2.php",
+      "filePath": "src/klan1/html/h2.php",
+      "summary": "HTML <h2> heading element",
+      "tags": [
+        "php",
+        "@author",
+        "@author"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/h3.php",
+      "type": "file",
+      "name": "h3.php",
+      "filePath": "src/klan1/html/h3.php",
+      "summary": "HTML <h3> heading element",
+      "tags": [
+        "php",
+        "@author",
+        "@author"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/h4.php",
+      "type": "file",
+      "name": "h4.php",
+      "filePath": "src/klan1/html/h4.php",
+      "summary": "HTML <h4> heading element",
+      "tags": [
+        "php",
+        "@author"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/h5.php",
+      "type": "file",
+      "name": "h5.php",
+      "filePath": "src/klan1/html/h5.php",
+      "summary": "HTML <h5> heading element",
+      "tags": [
+        "php",
+        "@author"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/h6.php",
+      "type": "file",
+      "name": "h6.php",
+      "filePath": "src/klan1/html/h6.php",
+      "summary": "HTML <h6> heading element",
+      "tags": [
+        "php",
+        "@author"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/head.php",
+      "type": "file",
+      "name": "head.php",
+      "filePath": "src/klan1/html/head.php",
+      "summary": "HTML head element with title, meta, link and script helpers",
+      "tags": [
+        "core",
+        "document-structure"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/header.php",
+      "type": "file",
+      "name": "header.php",
+      "filePath": "src/klan1/html/header.php",
+      "summary": "Create a HEADER html tag with VALUE as data.",
+      "tags": [
+        "php",
+        "@author",
+        "@author"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/hr.php",
+      "type": "file",
+      "name": "hr.php",
+      "filePath": "src/klan1/html/hr.php",
+      "summary": "HTML <hr> horizontal rule element",
+      "tags": [
+        "php",
+        "@author",
+        "@author",
+        "self-closed"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/html_document.php",
+      "type": "file",
+      "name": "html_document.php",
+      "filePath": "src/klan1/html/html_document.php",
+      "summary": "Root HTML document auto-creating head and body with charset and viewport meta defaults",
+      "tags": [
+        "core",
+        "document-root",
+        "html5"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/i.php",
+      "type": "file",
+      "name": "i.php",
+      "filePath": "src/klan1/html/i.php",
+      "summary": "HTML <i> italic text element",
+      "tags": [
+        "php",
+        "@author",
+        "@author"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/iframe.php",
+      "type": "file",
+      "name": "iframe.php",
+      "filePath": "src/klan1/html/iframe.php",
+      "summary": "HTML <iframe> inline frame element",
+      "tags": [
+        "php",
+        "@author",
+        "@author"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/img.php",
+      "type": "file",
+      "name": "img.php",
+      "filePath": "src/klan1/html/img.php",
+      "summary": "HTML <img> element",
+      "tags": [
+        "php",
+        "@author",
+        "@author",
+        "self-closed"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/input.php",
+      "type": "file",
+      "name": "input.php",
+      "filePath": "src/klan1/html/input.php",
+      "summary": "HTML <input> element",
+      "tags": [
+        "php",
+        "@author",
+        "@author",
+        "self-closed"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/label.php",
+      "type": "file",
+      "name": "label.php",
+      "filePath": "src/klan1/html/label.php",
+      "summary": "HTML <label> element",
+      "tags": [
+        "php",
+        "@author",
+        "@author"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/legend.php",
+      "type": "file",
+      "name": "legend.php",
+      "filePath": "src/klan1/html/legend.php",
+      "summary": "HTML <legend> element",
+      "tags": [
+        "php",
+        "@author",
+        "@author"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/li.php",
+      "type": "file",
+      "name": "li.php",
+      "filePath": "src/klan1/html/li.php",
+      "summary": "Create a LI html tag with VALUE as data. Use $div->set_value($data)",
+      "tags": [
+        "php",
+        "@author",
+        "@author"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/link.php",
+      "type": "file",
+      "name": "link.php",
+      "filePath": "src/klan1/html/link.php",
+      "summary": "HTML <link> element",
+      "tags": [
+        "php",
+        "@author",
+        "@author",
+        "self-closed"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/main.php",
+      "type": "file",
+      "name": "main.php",
+      "filePath": "src/klan1/html/main.php",
+      "summary": "Create a MAIN html tag with VALUE as data.",
+      "tags": [
+        "php",
+        "@author",
+        "@author"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/meta.php",
+      "type": "file",
+      "name": "meta.php",
+      "filePath": "src/klan1/html/meta.php",
+      "summary": "HTML <meta> element",
+      "tags": [
+        "php",
+        "@author",
+        "@author",
+        "self-closed"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/nav.php",
+      "type": "file",
+      "name": "nav.php",
+      "filePath": "src/klan1/html/nav.php",
+      "summary": "HTML <nav> navigation element",
+      "tags": [
+        "php",
+        "@author",
+        "@author"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/ol.php",
+      "type": "file",
+      "name": "ol.php",
+      "filePath": "src/klan1/html/ol.php",
+      "summary": "HTML <ol> ordered list element",
+      "tags": [
+        "php",
+        "@author",
+        "@author"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/option.php",
+      "type": "file",
+      "name": "option.php",
+      "filePath": "src/klan1/html/option.php",
+      "summary": "HTML <option> element",
+      "tags": [
+        "php",
+        "@author",
+        "@author"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/p.php",
+      "type": "file",
+      "name": "p.php",
+      "filePath": "src/klan1/html/p.php",
+      "summary": "HTML <p> paragraph element",
+      "tags": [
+        "php",
+        "@author",
+        "@author"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/pre.php",
+      "type": "file",
+      "name": "pre.php",
+      "filePath": "src/klan1/html/pre.php",
+      "summary": "HTML <pre> preformatted text element",
+      "tags": [
+        "php",
+        "@author",
+        "@author"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/script.php",
+      "type": "file",
+      "name": "script.php",
+      "filePath": "src/klan1/html/script.php",
+      "summary": "Create a SCRIPT html tag with VALUE as data. Use $script->set_value($crs) for load a file.",
+      "tags": [
+        "php",
+        "@author",
+        "@author"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/section.php",
+      "type": "file",
+      "name": "section.php",
+      "filePath": "src/klan1/html/section.php",
+      "summary": "HTML <section> element",
+      "tags": [
+        "php",
+        "@author",
+        "@author"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/select.php",
+      "type": "file",
+      "name": "select.php",
+      "filePath": "src/klan1/html/select.php",
+      "summary": "HTML <select> element",
+      "tags": [
+        "php",
+        "@author",
+        "@author"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/small.php",
+      "type": "file",
+      "name": "small.php",
+      "filePath": "src/klan1/html/small.php",
+      "summary": "Create a SMALL html tag with VALUE as data. Use $small->set_value($data)",
+      "tags": [
+        "php",
+        "@author",
+        "@author"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/span.php",
+      "type": "file",
+      "name": "span.php",
+      "filePath": "src/klan1/html/span.php",
+      "summary": "Create a SPAN html tag with VALUE as data. Use $span->set_value($data)",
+      "tags": [
+        "php",
+        "@author",
+        "@author"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/strong.php",
+      "type": "file",
+      "name": "strong.php",
+      "filePath": "src/klan1/html/strong.php",
+      "summary": "Create a STRONG html tag with VALUE as data. Use $strong->set_value($data)",
+      "tags": [
+        "php",
+        "@author",
+        "@author"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/style.php",
+      "type": "file",
+      "name": "style.php",
+      "filePath": "src/klan1/html/style.php",
+      "summary": "Create a STYLE html tag with VALUE as data. Use $style->set_value($css) for load a file.",
+      "tags": [
+        "php",
+        "@author",
+        "@author"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/table.php",
+      "type": "file",
+      "name": "table.php",
+      "filePath": "src/klan1/html/table.php",
+      "summary": "Chains a new <THEAD> HTML TAG",
+      "tags": [
+        "php",
+        "@author",
+        "@author"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/tag.php",
+      "type": "file",
+      "name": "tag.php",
+      "filePath": "src/klan1/html/tag.php",
+      "summary": "Base class managing attributes, child collections, inline tag resolution, and HTML generation",
+      "tags": [
+        "core",
+        "base-class"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/tag_catalog.php",
+      "type": "file",
+      "name": "tag_catalog.php",
+      "filePath": "src/klan1/html/tag_catalog.php",
+      "summary": "Static registry assigning unique IDs to tag instances",
+      "tags": [
+        "registry",
+        "id-management"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/tag_log.php",
+      "type": "file",
+      "name": "tag_log.php",
+      "filePath": "src/klan1/html/tag_log.php",
+      "summary": "Optional global action logger",
+      "tags": [
+        "logging",
+        "debugging"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/tbody.php",
+      "type": "file",
+      "name": "tbody.php",
+      "filePath": "src/klan1/html/tbody.php",
+      "summary": "Chains a new <TR> HTML TAG",
+      "tags": [
+        "php",
+        "@author",
+        "@author"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/td.php",
+      "type": "file",
+      "name": "td.php",
+      "filePath": "src/klan1/html/td.php",
+      "summary": "HTML <td> table data cell element",
+      "tags": [
+        "php",
+        "@author",
+        "@author"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/template.php",
+      "type": "file",
+      "name": "template.php",
+      "filePath": "src/klan1/html/template.php",
+      "summary": "Static class for loading PHP template files",
+      "tags": [
+        "template",
+        "static"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/textarea.php",
+      "type": "file",
+      "name": "textarea.php",
+      "filePath": "src/klan1/html/textarea.php",
+      "summary": "HTML <textarea> element",
+      "tags": [
+        "php",
+        "@author",
+        "@author"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/tfoot.php",
+      "type": "file",
+      "name": "tfoot.php",
+      "filePath": "src/klan1/html/tfoot.php",
+      "summary": "HTML <tfoot> element",
+      "tags": [
+        "php",
+        "@author",
+        "@author"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/th.php",
+      "type": "file",
+      "name": "th.php",
+      "filePath": "src/klan1/html/th.php",
+      "summary": "HTML <th> table header cell element",
+      "tags": [
+        "php",
+        "@author",
+        "@author"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/thead.php",
+      "type": "file",
+      "name": "thead.php",
+      "filePath": "src/klan1/html/thead.php",
+      "summary": "Chains a new <TR> HTML TAG",
+      "tags": [
+        "php",
+        "@author",
+        "@author"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/title.php",
+      "type": "file",
+      "name": "title.php",
+      "filePath": "src/klan1/html/title.php",
+      "summary": "HTML <title> element",
+      "tags": [
+        "php",
+        "@author",
+        "@author"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/tr.php",
+      "type": "file",
+      "name": "tr.php",
+      "filePath": "src/klan1/html/tr.php",
+      "summary": "HTML <tr> table row element",
+      "tags": [
+        "php",
+        "@author",
+        "@author"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/ul.php",
+      "type": "file",
+      "name": "ul.php",
+      "filePath": "src/klan1/html/ul.php",
+      "summary": "HTML <ul> unordered list element",
+      "tags": [
+        "php",
+        "@author",
+        "@author"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/notifications/common_code.php",
+      "type": "file",
+      "name": "common_code.php",
+      "filePath": "src/klan1/html/notifications/common_code.php",
+      "summary": "Session-based message queue",
+      "tags": [
+        "notifications",
+        "session"
+      ]
+    },
+    {
+      "id": "file:src/klan1/html/notifications/on_DOM.php",
+      "type": "file",
+      "name": "on_DOM.php",
+      "filePath": "src/klan1/html/notifications/on_DOM.php",
+      "summary": "DOM message insertion for notifications",
+      "tags": [
+        "notifications",
+        "dom"
+      ]
+    },
+    {
+      "id": "config:composer.json",
+      "type": "config",
+      "name": "composer.json",
+      "filePath": "composer.json",
+      "summary": "Composer package manifest with PSR-4 autoloading",
+      "tags": [
+        "config",
+        "composer"
+      ]
+    },
+    {
+      "id": "document:README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": "README.md",
+      "summary": "README.md documentation",
+      "tags": [
+        "docs"
+      ]
+    },
+    {
+      "id": "document:CLAUDE.md",
+      "type": "document",
+      "name": "CLAUDE.md",
+      "filePath": "CLAUDE.md",
+      "summary": "CLAUDE.md documentation",
+      "tags": [
+        "docs"
+      ]
+    },
+    {
+      "id": "concept:inline-tags",
+      "type": "concept",
+      "name": "Inline Tags",
+      "summary": "Tags embedded in text via placeholders",
+      "tags": [
+        "pattern"
+      ]
+    },
+    {
+      "id": "concept:child-collections",
+      "type": "concept",
+      "name": "Child Collections",
+      "summary": "Three ordered child arrays",
+      "tags": [
+        "pattern"
+      ]
+    },
+    {
+      "id": "concept:fluent-api",
+      "type": "concept",
+      "name": "Fluent API",
+      "summary": "Method chaining for tag construction",
+      "tags": [
+        "pattern"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:src/klan1/html/DOM.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "extends",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/a.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "extends",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/append_shotcuts.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "extends",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/article.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "extends",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/aside.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "extends",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/b.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "extends",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/body.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "extends",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/br.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "extends",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/button.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "extends",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/caption.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "extends",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/code.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "extends",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/div.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "extends",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/em.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "extends",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/fieldset.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "extends",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/footer.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "extends",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/form.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "extends",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/h1.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "extends",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/h2.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "extends",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/h3.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "extends",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/h4.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "extends",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/h5.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "extends",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/h6.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "extends",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/head.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "extends",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/header.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "extends",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/hr.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "extends",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/html_document.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "extends",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/i.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "extends",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/iframe.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "extends",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/img.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "extends",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/input.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "extends",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/label.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "extends",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/legend.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "extends",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/li.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "extends",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/link.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "extends",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/main.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "extends",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/meta.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "extends",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/nav.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "extends",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/ol.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "extends",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/option.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "extends",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/p.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "extends",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/pre.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "extends",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/script.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "extends",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/section.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "extends",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/select.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "extends",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/small.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "extends",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/span.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "extends",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/strong.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "extends",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/style.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "extends",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/table.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "extends",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/tag_catalog.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "extends",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/tag_log.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "extends",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/tbody.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "extends",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/td.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "extends",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/template.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "extends",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/textarea.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "extends",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/tfoot.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "extends",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/th.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "extends",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/thead.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "extends",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/title.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "extends",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/tr.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "extends",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/ul.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "extends",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/klan1/html/html_document.php",
+      "target": "file:src/klan1/html/head.php",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/klan1/html/html_document.php",
+      "target": "file:src/klan1/html/body.php",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/klan1/html/html_document.php",
+      "target": "file:src/klan1/html/meta.php",
+      "type": "uses",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/klan1/html/DOM.php",
+      "target": "file:src/klan1/html/html_document.php",
+      "type": "uses",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/klan1/html/append_shotcuts.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "uses",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/klan1/html/tag_catalog.php",
+      "target": "file:src/klan1/html/tag.php",
+      "type": "used_by",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/klan1/html/notifications/on_DOM.php",
+      "target": "file:src/klan1/html/notifications/common_code.php",
+      "type": "extends",
+      "weight": 0.9
+    }
+  ],
+  "layers": [
+    {
+      "id": "layer:core",
+      "name": "Core",
+      "description": "Base classes and infrastructure",
+      "nodeIds": [
+        "file:src/klan1/html/tag.php",
+        "file:src/klan1/html/html_document.php",
+        "file:src/klan1/html/head.php",
+        "file:src/klan1/html/body.php",
+        "file:src/klan1/html/append_shotcuts.php",
+        "file:src/klan1/html/tag_catalog.php",
+        "file:src/klan1/html/tag_log.php"
+      ]
+    },
+    {
+      "id": "layer:compatibility",
+      "name": "Compatibility",
+      "description": "Legacy wrappers",
+      "nodeIds": [
+        "file:src/klan1/html/DOM.php"
+      ]
+    },
+    {
+      "id": "layer:elements",
+      "name": "HTML Elements",
+      "description": "Individual tag implementations",
+      "nodeIds": [
+        "file:src/klan1/html/a.php",
+        "file:src/klan1/html/article.php",
+        "file:src/klan1/html/aside.php",
+        "file:src/klan1/html/b.php",
+        "file:src/klan1/html/br.php",
+        "file:src/klan1/html/button.php",
+        "file:src/klan1/html/caption.php",
+        "file:src/klan1/html/code.php",
+        "file:src/klan1/html/div.php",
+        "file:src/klan1/html/em.php",
+        "file:src/klan1/html/fieldset.php",
+        "file:src/klan1/html/footer.php",
+        "file:src/klan1/html/form.php",
+        "file:src/klan1/html/h1.php",
+        "file:src/klan1/html/h2.php",
+        "file:src/klan1/html/h3.php",
+        "file:src/klan1/html/h4.php",
+        "file:src/klan1/html/h5.php",
+        "file:src/klan1/html/h6.php",
+        "file:src/klan1/html/header.php",
+        "file:src/klan1/html/hr.php",
+        "file:src/klan1/html/i.php",
+        "file:src/klan1/html/iframe.php",
+        "file:src/klan1/html/img.php",
+        "file:src/klan1/html/input.php",
+        "file:src/klan1/html/label.php",
+        "file:src/klan1/html/legend.php",
+        "file:src/klan1/html/li.php",
+        "file:src/klan1/html/link.php",
+        "file:src/klan1/html/main.php",
+        "file:src/klan1/html/meta.php",
+        "file:src/klan1/html/nav.php",
+        "file:src/klan1/html/ol.php",
+        "file:src/klan1/html/option.php",
+        "file:src/klan1/html/p.php",
+        "file:src/klan1/html/pre.php",
+        "file:src/klan1/html/script.php",
+        "file:src/klan1/html/section.php",
+        "file:src/klan1/html/select.php",
+        "file:src/klan1/html/small.php",
+        "file:src/klan1/html/span.php",
+        "file:src/klan1/html/strong.php",
+        "file:src/klan1/html/style.php",
+        "file:src/klan1/html/table.php",
+        "file:src/klan1/html/tbody.php",
+        "file:src/klan1/html/td.php",
+        "file:src/klan1/html/textarea.php",
+        "file:src/klan1/html/tfoot.php",
+        "file:src/klan1/html/th.php",
+        "file:src/klan1/html/thead.php",
+        "file:src/klan1/html/title.php",
+        "file:src/klan1/html/tr.php",
+        "file:src/klan1/html/ul.php"
+      ]
+    },
+    {
+      "id": "layer:utilities",
+      "name": "Utilities",
+      "description": "Template and notifications",
+      "nodeIds": [
+        "file:src/klan1/html/template.php",
+        "file:src/klan1/html/notifications/common_code.php",
+        "file:src/klan1/html/notifications/on_DOM.php"
+      ]
+    },
+    {
+      "id": "layer:config",
+      "name": "Configuration",
+      "description": "Package config",
+      "nodeIds": [
+        "config:composer.json"
+      ]
+    },
+    {
+      "id": "layer:docs",
+      "name": "Documentation",
+      "description": "Docs and guides",
+      "nodeIds": [
+        "document:README.md",
+        "document:CLAUDE.md"
+      ]
+    },
+    {
+      "id": "layer:concepts",
+      "name": "Concepts",
+      "description": "Architectural patterns",
+      "nodeIds": [
+        "concept:inline-tags",
+        "concept:child-collections",
+        "concept:fluent-api"
+      ]
+    }
+  ],
+  "tour": [
+    {
+      "order": 1,
+      "title": "Overview",
+      "description": "Project README",
+      "nodeIds": [
+        "document:README.md"
+      ]
+    },
+    {
+      "order": 2,
+      "title": "Base Tag",
+      "description": "Core tag class",
+      "nodeIds": [
+        "file:src/klan1/html/tag.php"
+      ]
+    },
+    {
+      "order": 3,
+      "title": "Document",
+      "description": "Root with HTML5 defaults",
+      "nodeIds": [
+        "file:src/klan1/html/html_document.php"
+      ]
+    },
+    {
+      "order": 4,
+      "title": "DOM Wrapper",
+      "description": "v1 compatibility",
+      "nodeIds": [
+        "file:src/klan1/html/DOM.php"
+      ]
+    },
+    {
+      "order": 5,
+      "title": "Catalog",
+      "description": "Tag registry",
+      "nodeIds": [
+        "file:src/klan1/html/tag_catalog.php"
+      ]
+    }
+  ]
 }
