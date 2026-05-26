@@ -132,10 +132,19 @@ class tag {
         return self::$root;
     }
 
-    /**
-     * Remove the tag Object from the Array catalog, this will disable the 
-     * Object to be found or generated on chain actions.     
-     */
+/**
+ * Remove the tag Object from the Array catalog, this will disable the 
+ * Object to be found or generated on chain actions.
+ * 
+ * IMPORTANT: When a tag is decataloged, it won't be included in chain operations
+ * like append_child(), generate(), or search operations (q(), get_element_by_id(), etc.).
+ * This is useful for conditionally removing tags from the document flow or
+ * preventing unwanted nested generation.
+ * 
+ * @example
+ * $tag = new \k1lib\html\div();
+ * $tag->decatalog(); // Tag is now removed from catalog, won't be generated
+ */
     function decatalog() {
         // Itself from Catalog
         tag_catalog::decatalog($this->tag_id);
