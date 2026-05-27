@@ -10,17 +10,20 @@ namespace k1lib\html;
  * HTML <option> element
  *
  * @author Alejandro Trujillo J. <https://github.com/j0hnd03>
+ * @package k1lib\html
  */
 class option extends tag {
 
     use append_shortcuts;
 
     /**
-     * @param string $value <TAG value='$value' />
-     * @param string $label <TAG>$label</TAG>
-     * @param bool $selected
-     * @param string|null $class
-     * @param string|null $id
+     * Create an option element
+     *
+     * @param string $value The value attribute
+     * @param string $label The text content
+     * @param bool $selected Whether the option is selected
+     * @param string|null $class The class attribute
+     * @param string|null $id The id attribute
      */
     function __construct($value, $label, $selected = FALSE, $class = NULL, $id = NULL) {
         parent::__construct("option", IS_NOT_SELF_CLOSED);

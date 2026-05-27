@@ -10,15 +10,18 @@ namespace k1lib\html;
  * HTML <textarea> element
  *
  * @author Alejandro Trujillo J. <https://github.com/j0hnd03>
+ * @package k1lib\html
  */
 class textarea extends tag {
 
     use append_shortcuts;
 
     /**
-     * @param string $name
-     * @param string|null $class
-     * @param string|null $id
+     * Create a textarea element
+     *
+     * @param string $name The name attribute
+     * @param string|null $class The class attribute
+     * @param string|null $id The id attribute
      */
     function __construct($name, $class = NULL, $id = NULL) {
         parent::__construct("textarea", IS_NOT_SELF_CLOSED);

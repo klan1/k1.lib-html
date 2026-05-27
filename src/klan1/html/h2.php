@@ -10,15 +10,18 @@ namespace k1lib\html;
  * HTML <h2> heading element
  *
  * @author Alejandro Trujillo J. <https://github.com/j0hnd03>
+ * @package k1lib\html
  */
 class h2 extends tag {
 
     use append_shortcuts;
 
     /**
-     * @param string|null $value
-     * @param string|null $class
-     * @param string|null $id
+     * Create an h2 heading element
+     *
+     * @param string|null $value The heading text content
+     * @param string|null $class The class attribute
+     * @param string|null $id The id attribute
      */
     function __construct($value = NULL, $class = NULL, $id = NULL) {
         parent::__construct("h2", IS_NOT_SELF_CLOSED);

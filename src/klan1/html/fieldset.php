@@ -10,13 +10,16 @@ namespace k1lib\html;
  * HTML <fieldset> element
  *
  * @author Alejandro Trujillo J. <https://github.com/j0hnd03>
+ * @package k1lib\html
  */
 class fieldset extends tag {
 
     use append_shortcuts;
 
     /**
-     * @param string $legend
+     * Create a fieldset element with a legend
+     *
+     * @param string $legend The legend text content
      */
     function __construct($legend) {
         parent::__construct("fieldset", IS_NOT_SELF_CLOSED);

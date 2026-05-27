@@ -10,6 +10,7 @@ namespace k1lib\html;
  * HTML <footer> element
  *
  * @author Alejandro Trujillo J. <https://github.com/j0hnd03>
+ * @package k1lib\html
  */
 class footer extends tag {
 

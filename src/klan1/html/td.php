@@ -10,15 +10,18 @@ namespace k1lib\html;
  * HTML <td> table data cell element
  *
  * @author Alejandro Trujillo J. <https://github.com/j0hnd03>
+ * @package k1lib\html
  */
 class td extends tag {
 
     use append_shortcuts;
 
     /**
-     * @param string $value <TAG>$value</TAG>
-     * @param string|null $class
-     * @param string|null $id
+     * Create a td element
+     *
+     * @param string $value The cell text content
+     * @param string|null $class The class attribute
+     * @param string|null $id The id attribute
      */
     function __construct($value, $class = NULL, $id = NULL) {
         parent::__construct("td", IS_NOT_SELF_CLOSED);

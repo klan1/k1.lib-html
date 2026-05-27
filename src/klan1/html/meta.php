@@ -10,14 +10,17 @@ namespace k1lib\html;
  * HTML <meta> element
  *
  * @author Alejandro Trujillo J. <https://github.com/j0hnd03>
+ * @package k1lib\html
  */
 class meta extends tag {
 
     use append_shortcuts;
 
     /**
-     * @param string|null $name
-     * @param string|null $content
+     * Create a meta element
+     *
+     * @param string|null $name The name attribute
+     * @param string|null $content The content attribute
      */
     function __construct($name = NULL, $content = NULL) {
         parent::__construct("meta", IS_SELF_CLOSED);

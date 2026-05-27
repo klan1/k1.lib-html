@@ -19,7 +19,7 @@
         "test": "phpunit",
         "examples": [
             "Composer\\Config::disableProcessTimeout",
-            "php -S localhost:8100 -t examples",
+            "php -S localhost:8100 -t examples &",
             "open http://localhost:8100"
         ]
     }

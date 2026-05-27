@@ -10,6 +10,7 @@ namespace k1lib\html;
  * HTML <header> element
  *
  * @author Alejandro Trujillo J. <https://github.com/j0hnd03>
+ * @package k1lib\html
  */
 class header extends tag {
 

@@ -10,16 +10,19 @@ namespace k1lib\html;
  * HTML <label> element
  *
  * @author Alejandro Trujillo J. <https://github.com/j0hnd03>
+ * @package k1lib\html
  */
 class label extends tag {
 
     use append_shortcuts;
 
     /**
-     * @param string $label <TAG>$value</TAG>
-     * @param string|null $for
-     * @param string|null $class
-     * @param string|null $id
+     * Create a label element
+     *
+     * @param string $label The label text content
+     * @param string|null $for The for attribute (id of associated element)
+     * @param string|null $class The class attribute
+     * @param string|null $id The id attribute
      */
     function __construct($label, $for, $class = NULL, $id = NULL) {
         parent::__construct("label", IS_NOT_SELF_CLOSED);

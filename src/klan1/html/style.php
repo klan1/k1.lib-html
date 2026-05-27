@@ -10,15 +10,16 @@ namespace k1lib\html;
  * HTML <style> element
  *
  * @author Alejandro Trujillo J. <https://github.com/j0hnd03>
+ * @package k1lib\html
  */
 class style extends tag {
 
     use append_shortcuts;
 
     /**
-     * Create a STYLE html tag with VALUE as data. Use $style->set_value($css) for load a file.
+     * Create a style element
      *
-     * @param string|null $style
+     * @param string|null $style The CSS content
      */
     function __construct($style = NULL) {
         parent::__construct("style", IS_NOT_SELF_CLOSED);
