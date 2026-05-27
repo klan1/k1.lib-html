@@ -2,7 +2,7 @@
 /**
  * k1.lib-html - Core HTML Components Showcase
  *
- * @author Alejandro Trujillo J. (J0hnd03)
+ * @author Alejandro Trujillo J. <https://github.com/j0hnd03>
  * @link https://github.com/klan1/k1.lib-html
  * @license Apache-2.0
  */
