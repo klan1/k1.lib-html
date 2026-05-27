@@ -24,7 +24,6 @@ class li extends tag {
      */
     function __construct($value = NULL, $class = NULL, $id = NULL) {
         parent::__construct("li", IS_NOT_SELF_CLOSED);
-//        $this->data_array &= $data_array;
         $this->set_value($value);
         $this->set_class($class, TRUE);
         $this->set_id($id);

@@ -26,6 +26,10 @@ class tag_log {
         return htmlspecialchars(self::$log);
     }
 
+    static function get_log_raw() {
+        return self::$log;
+    }
+
     /**
      * Receive 1 action, do not need New Line at end.
      * @param string $log 

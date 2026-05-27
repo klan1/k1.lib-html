@@ -43,7 +43,7 @@ class FormElementsExtendedTest extends TestCase
         $select = new select('country');
         $option = $select->append_option('us', 'United States');
         $this->assertInstanceOf(option::class, $option);
-        $this->assertTrue($select->has_childs());
+        $this->assertTrue($select->has_children());
     }
 
     public function testSelectMultipleOptions(): void
@@ -109,7 +109,7 @@ class FormElementsExtendedTest extends TestCase
     public function testFieldsetWithChilds(): void
     {
         $fieldset = new fieldset('Address');
-        $this->assertTrue($fieldset->has_childs());
+        $this->assertTrue($fieldset->has_children());
     }
 
     public function testLegendCreation(): void

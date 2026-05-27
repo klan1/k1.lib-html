@@ -32,6 +32,6 @@ class BrTest extends TestCase
         $div = new div();
         $br = new br();
         $div->append_child($br);
-        $this->assertTrue($div->has_childs());
+        $this->assertTrue($div->has_children());
     }
 }

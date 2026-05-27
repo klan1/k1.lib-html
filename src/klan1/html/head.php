@@ -34,9 +34,10 @@ class head extends tag {
         return $this->title;
     }
 
-    function set_title($document_title) {
-        $this->title->set_value($document_title);
-        return $this;
+    function set_title($document_title): void {
+        if ($this->title !== null) {
+            $this->title->set_value($document_title);
+        }
     }
 
     public function get_title() {

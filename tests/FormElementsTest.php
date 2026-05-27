@@ -89,7 +89,7 @@ class FormElementsTest extends TestCase
         $form = new form();
         $input = new input('text', 'name', '');
         $form->append_child($input);
-        $this->assertTrue($form->has_childs());
+        $this->assertTrue($form->has_children());
     }
 
     public function testButtonCreation(): void

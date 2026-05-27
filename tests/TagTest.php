@@ -61,7 +61,7 @@ class TagTest extends TestCase
         $parent = new div();
         $child = new span();
         $parent->append_child($child);
-        $this->assertTrue($parent->has_childs());
+        $this->assertTrue($parent->has_children());
     }
 
     public function testGenerateSelfClosedTag(): void
@@ -112,7 +112,7 @@ class TagTest extends TestCase
         $child = new span();
         $parent->append_child($child);
         $parent->remove_childs();
-        $this->assertFalse($parent->has_childs());
+        $this->assertFalse($parent->has_children());
     }
 
     public function testPreCodeAndPostCode(): void

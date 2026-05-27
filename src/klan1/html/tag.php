@@ -72,16 +72,16 @@ class tag {
     protected $pre_value = "";
 
     /** @var bool */
-    protected $has_child = FALSE;
+    protected $has_children = FALSE;
 
     /** @var array */
-    protected $childs_head = array();
+    protected $children_head = array();
 
     /** @var tag[] */
-    protected $childs = array();
+    protected $children = array();
 
     /** @var array */
-    protected $childs_tail = array();
+    protected $children_tail = array();
 
     /** @var int */
     protected $child_level = 0;
@@ -113,7 +113,6 @@ class tag {
         } else {
             trigger_error("Self closed value has to be boolean", E_USER_WARNING);
         }
-        //            $this->set_attrib("class", "k1lib-{$tag_name}-object");
         // GET the global tag ID and catalog the object
         $this->tag_id = tag_catalog::increase($this);
         if (html_document::get_use_log()) {
@@ -151,11 +150,19 @@ class tag {
         if (html_document::get_use_log()) {
             tag_log::log("[{$this->get_tag_name()}] ID:{$this->tag_id} was decataloged");
         }
-        // His childs
-        if ($this->has_child) {
-            foreach ($this->childs as $child_object) {
+        // His children
+        if ($this->has_children) {
+            foreach ($this->children as $child_object) {
                 $child_object->decatalog();
             }
+        }
+        // Children head
+        foreach ($this->children_head as $child_object) {
+            $child_object->decatalog();
+        }
+        // Children tail
+        foreach ($this->children_tail as $child_object) {
+            $child_object->decatalog();
         }
         // Inline objects
         foreach ($this->get_inline_tags() as $tag) {
@@ -229,15 +236,6 @@ class tag {
         }
     }
 
-    //    /**
-    //     * Wherever the tag Object is used as string, will be returned as 
-    //     * the generated tag
-    //     * @return string
-    //     */
-    //    public function __toString() {
-    //        return $this->generate();
-    //    }
-
     /**
      * Chains an HTML tag into the actual HTML tag on MAIN collection, by default will put on last 
      * position but with $put_last_position = FALSE will be the on first position
@@ -249,29 +247,29 @@ class tag {
         if ($put_last_position) {
             switch ($tag_position) {
                 case APPEND_ON_HEAD:
-                    $this->childs_head[] = $child_object;
+                    $this->children_head[] = $child_object;
                     break;
                 case APPEND_ON_TAIL:
-                    $this->childs_tail[] = $child_object;
+                    $this->children_tail[] = $child_object;
                     break;
                 default:
-                    $this->childs[] = $child_object;
+                    $this->children[] = $child_object;
                     break;
             }
         } else {
             switch ($tag_position) {
                 case APPEND_ON_HEAD:
-                    array_unshift($this->childs_head, $child_object);
+                    array_unshift($this->children_head, $child_object);
                     break;
                 case APPEND_ON_TAIL:
-                    array_unshift($this->childs_tail, $child_object);
+                    array_unshift($this->children_tail, $child_object);
                     break;
                 default:
-                    array_unshift($this->childs, $child_object);
+                    array_unshift($this->children, $child_object);
                     break;
             }
         }
-        $this->has_child = TRUE;
+        $this->has_children = TRUE;
         if (html_document::get_use_log()) {
             tag_log::log("[{$this->get_tag_name()}] ID:{$this->tag_id} appends [{$child_object->get_tag_name()}] ID:{$child_object->tag_id} ");
         }
@@ -317,19 +315,19 @@ class tag {
      * @return tag
      */
     public function remove_childs() {
-        foreach ($this->childs as $key => $child) {
-            unset($this->childs[$key]);
+        foreach ($this->children as $key => $child) {
+            unset($this->children[$key]);
             $child->decatalog();
         }
-        foreach ($this->childs_head as $key => $child) {
-            unset($this->childs_head[$key]);
+        foreach ($this->children_head as $key => $child) {
+            unset($this->children_head[$key]);
             $child->decatalog();
         }
-        foreach ($this->childs_tail as $key => $child) {
-            unset($this->childs_tail[$key]);
+        foreach ($this->children_tail as $key => $child) {
+            unset($this->children_tail[$key]);
             $child->decatalog();
         }
-        $this->has_child = FALSE;
+        $this->has_children = FALSE;
         return $this;
     }
 
@@ -475,8 +473,8 @@ class tag {
      * @return tag Returns FALSE if is not set
      */
     public function get_child($n) {
-        if (isset($this->childs[$n])) {
-            return $this->childs[$n];
+        if (isset($this->children[$n])) {
+            return $this->children[$n];
         } else {
             return FALSE;
         }
@@ -487,8 +485,8 @@ class tag {
      * @return tag[] Returns [] if is not set
      */
     public function get_childs() {
-        if (!empty($this->childs)) {
-            return $this->childs;
+        if (!empty($this->children)) {
+            return $this->children;
         } else {
             return [];
         }
@@ -500,9 +498,8 @@ class tag {
      * @param tag $new_object
      */
     public function replace_child($n, tag $new_object) {
-        if (array_key_exists($n, $this->childs)) {
-            $this->childs[$n] = $new_object;
-            //            echo "$n exists ! {$this->childs[$n]} {$this->childs[$n]->generate()} <br>";
+        if (array_key_exists($n, $this->children)) {
+            $this->children[$n] = $new_object;
         }
     }
 
@@ -634,7 +631,7 @@ class tag {
             }
         }
         if ($value_original !== $this->value) {
-            $this->has_child = TRUE;
+            $this->has_children = TRUE;
         }
     }
 
@@ -722,7 +719,7 @@ class tag {
         /**
          * Merge the child arrays HEAD, MAIN and TAIL collections
          */
-        $all_childs = $this->get_all_childs();
+        $all_childs = $this->get_all_children();
 
         $object_childs = count($all_childs);
 
@@ -753,7 +750,7 @@ class tag {
                     }
                 }
             }
-            if ($has_childs || $this->has_child) {
+            if ($has_childs || $this->has_children) {
                 $html_code .= "\n";
             }
             $html_code .= $this->post_value . $this->generate_close();
@@ -776,7 +773,7 @@ class tag {
         /**
          * TAB constructor
          */
-        if (($this->child_level > 0) && $this->has_child) {
+        if (($this->child_level > 0) && $this->has_children) {
             $tabs = str_repeat("\t", $this->child_level);
         } else {
             $tabs = '';
@@ -814,7 +811,7 @@ class tag {
                 return $this;
             } else {
                 $inline_tags = $this->get_inline_tags();
-                $all_childs = $this->get_all_childs();
+                $all_childs = $this->get_all_children();
                 $all_childs = array_merge($inline_tags, $all_childs);
                 foreach ($all_childs as $child) {
                     if (html_document::get_use_log()) {
@@ -885,7 +882,7 @@ class tag {
              * Child and inline tags
              */
             $inline_tags = $this->get_inline_tags();
-            $all_childs = $this->get_all_childs();
+            $all_childs = $this->get_all_children();
             $all_childs = array_merge($inline_tags, $all_childs);
             foreach ($all_childs as $child) {
                 if (html_document::get_use_log()) {
@@ -939,7 +936,7 @@ class tag {
              * Child and inline tags
              */
             $inline_tags = $this->get_inline_tags();
-            $all_childs = $this->get_all_childs();
+            $all_childs = $this->get_all_children();
             $all_childs = array_merge($inline_tags, $all_childs);
             foreach ($all_childs as $child) {
                 if (html_document::get_use_log()) {
@@ -1014,7 +1011,7 @@ class tag {
              * Child and inline tags
              */
             $inline_tags = $this->get_inline_tags();
-            $all_childs = $this->get_all_childs();
+            $all_childs = $this->get_all_children();
             $all_childs = array_merge($inline_tags, $all_childs);
             foreach ($all_childs as $child) {
                 if (html_document::get_use_log()) {
@@ -1063,7 +1060,7 @@ class tag {
              * Child and inline tags
              */
             $inline_tags = $this->get_inline_tags();
-            $all_childs = $this->get_all_childs();
+            $all_childs = $this->get_all_children();
             $all_childs = array_merge($inline_tags, $all_childs);
             foreach ($all_childs as $child) {
                 if (html_document::get_use_log()) {
@@ -1090,31 +1087,35 @@ class tag {
      * TRUE if this Objects have child and FALSE if not.
      * @return boolean
      */
-    function has_childs() {
-        return $this->has_child;
+    /**
+     * TRUE if this Objects have children and FALSE if not.
+     * @return boolean
+     */
+    function has_children() {
+        return $this->has_children;
     }
 
     /**
-     * Merge and return the $childs_head, $childs and $childs_tail
+     * Merge and return the $children_head, $children and $children_tail
      * @return tag[]
      */
-    protected function get_all_childs() {
+    protected function get_all_children() {
         /**
          * Merge the child arrays HEAD, MAIN and TAIL collections
          */
         $merged_childs = [];
-        if (!empty($this->childs_head)) {
-            foreach ($this->childs_head as $child) {
+        if (!empty($this->children_head)) {
+            foreach ($this->children_head as $child) {
                 $merged_childs[] = $child;
             }
         }
-        if (!empty($this->childs)) {
-            foreach ($this->childs as $child) {
+        if (!empty($this->children)) {
+            foreach ($this->children as $child) {
                 $merged_childs[] = $child;
             }
         }
-        if (!empty($this->childs_tail)) {
-            foreach ($this->childs_tail as $child) {
+        if (!empty($this->children_tail)) {
+            foreach ($this->children_tail as $child) {
                 $merged_childs[] = $child;
             }
         }

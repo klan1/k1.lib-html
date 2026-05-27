@@ -47,9 +47,9 @@ class select extends tag {
         if (!empty($selected)) {
             $selected[0]->remove_attrib("selected");
         }
-        $targuet_tag = $this->get_elements_by_attrib_value("value", $value);
-        if (isset($targuet_tag[0])) {
-            $targuet_tag[0]->set_attrib("selected", TRUE);
+        $target_tag = $this->get_elements_by_attrib_value("value", $value);
+        if (isset($target_tag[0])) {
+            $target_tag[0]->set_attrib("selected", TRUE);
         }
     }
 }

@@ -40,7 +40,7 @@ class TableTagsTest extends TestCase
         $table = new table();
         $thead = $table->append_thead();
         $this->assertInstanceOf(thead::class, $thead);
-        $this->assertTrue($table->has_childs());
+        $this->assertTrue($table->has_children());
     }
 
     public function testTableAppendTbody(): void

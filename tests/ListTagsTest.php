@@ -35,7 +35,7 @@ class ListTagsTest extends TestCase
         $ul = new ul();
         $li = $ul->append_li('Item 1');
         $this->assertInstanceOf(li::class, $li);
-        $this->assertTrue($ul->has_childs());
+        $this->assertTrue($ul->has_children());
     }
 
     public function testUlMultipleLi(): void

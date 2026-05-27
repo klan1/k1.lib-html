@@ -51,7 +51,7 @@ class DivTest extends TestCase
         $child = new p();
         $child->set_value('Paragraph');
         $div->append_child($child);
-        $this->assertTrue($div->has_childs());
+        $this->assertTrue($div->has_children());
     }
 
     public function testDivWithMultipleChilds(): void

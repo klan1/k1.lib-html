@@ -23,7 +23,6 @@ class ul extends tag {
      */
     function __construct($class = NULL, $id = NULL) {
         parent::__construct("ul", IS_NOT_SELF_CLOSED);
-//        $this->data_array &= $data_array;
         $this->set_class($class, TRUE);
         $this->set_id($id);
     }
