@@ -7,7 +7,7 @@ namespace k1lib\html;
  *
  * @author Alejandro Trujillo J. <https://github.com/j0hnd03>
  */
-trait append_shotcuts {
+trait append_shortcuts {
 
     /**
      * 

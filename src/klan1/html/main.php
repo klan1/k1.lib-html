@@ -13,7 +13,7 @@ namespace k1lib\html;
  */
 class main extends tag {
 
-    use append_shotcuts;
+    use append_shortcuts;
 
     /**
      * Create a MAIN html tag with VALUE as data.

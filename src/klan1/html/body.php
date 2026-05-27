@@ -13,7 +13,7 @@ namespace k1lib\html;
  */
 class body extends tag {
 
-    use append_shotcuts;
+    use append_shortcuts;
 
     function __construct() {
         parent::__construct("body", IS_NOT_SELF_CLOSED);

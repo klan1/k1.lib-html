@@ -13,7 +13,7 @@ namespace k1lib\html;
  */
 class span extends tag {
 
-    use append_shotcuts;
+    use append_shortcuts;
 
     /**
      * Create a SPAN html tag with VALUE as data. Use $span->set_value($data)

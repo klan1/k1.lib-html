@@ -13,7 +13,7 @@ namespace k1lib\html;
  */
 class footer extends tag {
 
-    use append_shotcuts;
+    use append_shortcuts;
 
     /**
      * Create a FOOTER html tag with VALUE as data.

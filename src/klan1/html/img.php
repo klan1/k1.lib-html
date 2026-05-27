@@ -13,7 +13,7 @@ namespace k1lib\html;
  */
 class img extends tag {
 
-    use append_shotcuts;
+    use append_shortcuts;
 
     /**
      * @param string|null $src

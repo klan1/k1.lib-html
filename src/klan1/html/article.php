@@ -13,7 +13,7 @@ namespace k1lib\html;
  */
 class article extends tag {
 
-    use append_shotcuts;
+    use append_shortcuts;
 
     /**
      * Create an ARTICLE html tag with VALUE as data.

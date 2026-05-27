@@ -13,7 +13,7 @@ namespace k1lib\html;
  */
 class a extends tag {
 
-    use append_shotcuts;
+    use append_shortcuts;
 
     function __construct($href, $label, $target = NULL, $class = NULL, $id = NULL) {
         parent::__construct("a", IS_NOT_SELF_CLOSED);

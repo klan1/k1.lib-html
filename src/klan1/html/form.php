@@ -13,7 +13,7 @@ namespace k1lib\html;
  */
 class form extends tag {
 
-    use append_shotcuts;
+    use append_shortcuts;
 
     function __construct($id = "k1lib-form") {
         parent::__construct("form", IS_NOT_SELF_CLOSED);

@@ -13,7 +13,7 @@ namespace k1lib\html;
  */
 class ul extends tag {
 
-    use append_shotcuts;
+    use append_shortcuts;
 
     /**
      * Create a UL html tag.

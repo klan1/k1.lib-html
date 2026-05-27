@@ -13,19 +13,19 @@ namespace k1lib\html;
  */
 class section extends tag {
 
-    use append_shotcuts;
+    use append_shortcuts;
 
     /**
-     * @param string|null $id
      * @param string|null $class
+     * @param string|null $id
      */
-    function __construct($id = NULL, $class = NULL) {
+    function __construct($class = NULL, $id = NULL) {
         parent::__construct("section", IS_NOT_SELF_CLOSED);
-        if (!empty($id)) {
-            $this->set_attrib("id", $id);
-        }
         if (!empty($class)) {
             $this->set_attrib("class", $class);
+        }
+        if (!empty($id)) {
+            $this->set_attrib("id", $id);
         }
     }
 }

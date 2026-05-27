@@ -13,7 +13,7 @@ namespace k1lib\html;
  */
 class link extends tag {
 
-    use append_shotcuts;
+    use append_shortcuts;
 
     /**
      * @param string|null $href

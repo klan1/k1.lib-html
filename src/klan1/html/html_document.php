@@ -23,7 +23,7 @@ namespace k1lib\html;
  */
 class html_document extends tag {
 
-    use append_shotcuts;
+    use append_shortcuts;
 
     /**
      * @var head

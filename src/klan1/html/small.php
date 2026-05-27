@@ -13,7 +13,7 @@ namespace k1lib\html;
  */
 class small extends tag {
 
-    use append_shotcuts;
+    use append_shortcuts;
 
     /**
      * Create a SMALL html tag with VALUE as data. Use $small->set_value($data)

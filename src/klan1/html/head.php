@@ -13,7 +13,7 @@ namespace k1lib\html;
  */
 class head extends tag {
 
-    use append_shotcuts;
+    use append_shortcuts;
 
     /**
      * @var title
@@ -36,6 +36,7 @@ class head extends tag {
 
     function set_title($document_title) {
         $this->title->set_value($document_title);
+        return $this;
     }
 
     public function get_title() {

@@ -13,7 +13,7 @@ namespace k1lib\html;
  */
 class ol extends tag {
 
-    use append_shotcuts;
+    use append_shortcuts;
 
     /**
      * Create a OL html tag.
@@ -40,7 +40,6 @@ class ol extends tag {
      */
     function append_li($value = NULL, $class = NULL, $id = NULL) {
         $new = new li($value, $class, $id);
-        $this->set_value($value);
         $this->append_child($new);
         return $new;
     }

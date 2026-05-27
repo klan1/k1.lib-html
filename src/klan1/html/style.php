@@ -13,7 +13,7 @@ namespace k1lib\html;
  */
 class style extends tag {
 
-    use append_shotcuts;
+    use append_shortcuts;
 
     /**
      * Create a STYLE html tag with VALUE as data. Use $style->set_value($css) for load a file.

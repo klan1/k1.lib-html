@@ -32,28 +32,6 @@ static function is_cataloged($tag_index) {
 ```
 Does not call `index_exist()` to verify the tag is actually in the catalog. Returns `true` for any object that happens to have a `get_tag_id` method, even if it was decataloged. Should call `index_exist($tag_index->get_tag_id())`.
 
-### C3. `table_from_data` imports nonexistent `K1MAGIC` class
-**File:** `bootstrap/table_from_data.php:7`
-```php
-use k1lib\K1MAGIC;
-```
-`K1MAGIC::get_value()` is called on lines 237 and 262. This class does not exist in this project or any declared dependency. Using the `--authcode--` feature in `parse_string_value()` causes a **fatal error**.
-
-### C4. `template::error_500()` calls `DOM::start()` without argument
-**File:** `template.php:46`
-```php
-DOM::start();
-DOM::html_document()->body()->append_h1('500 Internal error');
-```
-`DOM::start(html_document $tpl)` requires an `html_document` argument, but none is passed. Calling `DOM::html_document()` returns `null`, causing a **fatal error** on the next line.
-
-### C5. `img` tag uses bare `TRUE` instead of `IS_SELF_CLOSED` constant
-**File:** `img.php:10`
-```php
-parent::__construct("img", TRUE);
-```
-Every other self-closed tag (`br`, `hr`, `input`, `meta`) uses `IS_SELF_CLOSED`. `img` uses bare `TRUE`. Inconsistent with the project's own convention.
-
 ### C6. `link` tag passes `IS_SELF_CLOSED` (TRUE) but `<link>` is a void element
 **File:** `link.php:10`
 ```php
@@ -64,15 +42,6 @@ parent::__construct("link");   // defaults to IS_SELF_CLOSED=TRUE
 ---
 
 ## HIGH — Logical Bugs
-
-### H1. `table_from_data::use_data()` skips first data row's value parsing
-**File:** `bootstrap/table_from_data.php:95`
-```php
-if ($this->has_header && $row !== 0) {
-      $col_value = $this->parse_string_value($col_value, $row);
-}
-```
-`$row` is initialized to `0` on line 81 and incremented on line 131 (after the inner loop). The condition `$row !== 0` is true for all iterations except the first. But `$row` and `$row_index` (the actual data row index) diverge because `$row` is incremented after the loop body. This causes the first data row (index 1) to skip template variable parsing in `parse_string_value()`.
 
 ### H2. `tag::get_elements_by_class()` uses substring match, not word boundary
 **File:** `tag.php:1049`

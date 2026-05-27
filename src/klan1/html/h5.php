@@ -9,7 +9,7 @@ namespace k1lib\html;
  */
 class h5 extends tag {
 
-    use append_shotcuts;
+    use append_shortcuts;
 
     function __construct($value = NULL, $class = NULL, $id = NULL) {
         parent::__construct("h5", IS_NOT_SELF_CLOSED);

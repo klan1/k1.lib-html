@@ -13,7 +13,7 @@ namespace k1lib\html;
  */
 class li extends tag {
 
-    use append_shotcuts;
+    use append_shortcuts;
 
     /**
      * Create a LI html tag with VALUE as data. Use $div->set_value($data)
@@ -46,7 +46,7 @@ class li extends tag {
      * 
      * @param string $class
      * @param string $id
-     * @return div
+     * @return ol
      */
     function append_ol($class = NULL, $id = NULL) {
         $new = new ol($class, $id);

@@ -13,7 +13,7 @@ namespace k1lib\html;
  */
 class h3 extends tag {
 
-    use append_shotcuts;
+    use append_shortcuts;
 
     /**
      * @param string|null $value

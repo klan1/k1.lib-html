@@ -13,7 +13,7 @@ namespace k1lib\html;
  */
 class div extends tag {
 
-    use append_shotcuts;
+    use append_shortcuts;
 
     /**
      * Create a DIV html tag with VALUE as data. Use $div->set_value($data)

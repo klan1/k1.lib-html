@@ -13,14 +13,14 @@ namespace k1lib\html;
  */
 class pre extends tag {
 
-    use append_shotcuts;
+    use append_shortcuts;
 
     /**
-     * @param string $value
+     * @param string|null $value
      * @param string|null $class
      * @param string|null $id
      */
-    function __construct($value, $class = NULL, $id = NULL) {
+    function __construct($value = NULL, $class = NULL, $id = NULL) {
         parent::__construct("pre", IS_NOT_SELF_CLOSED);
         $this->set_value($value);
         $this->set_class($class);

@@ -13,7 +13,7 @@ namespace k1lib\html;
  */
 class script extends tag {
 
-    use append_shotcuts;
+    use append_shortcuts;
 
     /**
      * Create a SCRIPT html tag with VALUE as data. Use $script->set_value($crs) for load a file.

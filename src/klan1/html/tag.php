@@ -27,7 +27,7 @@ const INSERT_ON_POST_TAG = 1;
  */
 class tag {
 
-    use append_shotcuts;
+    use append_shortcuts;
 
     // TODO: make a better solition for this
     static tag|null $root = null;
@@ -176,7 +176,7 @@ class tag {
         if (tag_catalog::index_exist($this->tag_id)) {
             return $this->tag_id;
         } else {
-            NULL;
+            return NULL;
         }
     }
 
@@ -188,7 +188,7 @@ class tag {
         return self::$use_log;
     }
 
-    static function set_use_log($use_log) {
+    static function set_use_log(bool $use_log): void {
         self::$use_log = $use_log;
     }
 
@@ -209,6 +209,7 @@ class tag {
             tag_log::log("[{$this->get_tag_name()}] ID:{$this->tag_id} is child of [{$parent->get_tag_name()}] ID:{$parent->tag_id} ");
         }
         $this->parent = $parent;
+        return $this;
     }
 
     /**
@@ -721,9 +722,9 @@ class tag {
         /**
          * Merge the child arrays HEAD, MAIN and TAIL collections
          */
-        $this->childs = $this->get_all_childs();
+        $all_childs = $this->get_all_childs();
 
-        $object_childs = count($this->childs);
+        $object_childs = count($all_childs);
 
         /**
          * TAB constructor
@@ -745,7 +746,7 @@ class tag {
             // Child objetcs generation
             if (($with_childs) && ($object_childs >= 1)) {
                 $has_childs = TRUE;
-                foreach ($this->childs as $child_object) {
+                foreach ($all_childs as $child_object) {
                     if ($child_object->get_tag_id()) {
                         $child_object->child_level = $this->child_level + 1;
                         $html_code .= $child_object->generate();
@@ -904,11 +905,7 @@ class tag {
             tag_log::log("[{$this->get_tag_name()}] ID:{$this->tag_id} will return " . count($tags) . " '$tag_name' tags");
         }
 
-        if (is_array($tags) || count($tags > 0)) {
-            return $tags;
-        } else {
-            return null;
-        }
+        return count($tags) > 0 ? $tags : null;
     }
 
     /**
@@ -961,11 +958,7 @@ class tag {
         if (html_document::get_use_log()) {
             tag_log::log("[{$this->get_tag_name()}] ID:{$this->tag_id} will return " . count($tags) . " '$attribute_name' attribute");
         }
-        if (is_array($tags) || count($tags > 0)) {
-            return $tags;
-        } else {
-            return null;
-        }
+        return count($tags) > 0 ? $tags : null;
     }
 
     /**
@@ -1041,11 +1034,7 @@ class tag {
         if (html_document::get_use_log()) {
             tag_log::log("[{$this->get_tag_name()}] ID:{$this->tag_id} will return " . count($tags) . " '$attribute_name' attribute");
         }
-        if (is_array($tags) || count($tags > 0)) {
-            return $tags;
-        } else {
-            return null;
-        }
+        return count($tags) > 0 ? $tags : null;
     }
 
     /**
@@ -1060,12 +1049,15 @@ class tag {
         }
         $classes = [];
         if ($this->get_tag_id()) {
-            //            if ($this->get_attribute("class") == $class_name) {
-            if (strstr($this->get_attribute("class"), $class_name) !== FALSE) {
-                if (html_document::get_use_log()) {
-                    tag_log::log("[{$this->get_tag_name()}] ID:{$this->tag_id} is returned");
+            $class_attr = $this->get_attribute("class");
+            if ($class_attr !== FALSE) {
+                $class_array = explode(' ', trim($class_attr));
+                if (in_array($class_name, $class_array)) {
+                    if (html_document::get_use_log()) {
+                        tag_log::log("[{$this->get_tag_name()}] ID:{$this->tag_id} is returned");
+                    }
+                    $classes[] = $this;
                 }
-                $classes[] = $this;
             }
             /**
              * Child and inline tags
@@ -1091,11 +1083,7 @@ class tag {
             tag_log::log("[{$this->get_tag_name()}] ID:{$this->tag_id} will return " . count($classes) . " tags with CLASS='$class_name'");
         }
 
-        if (is_array($classes) || count($classes > 0)) {
-            return $classes;
-        } else {
-            return null;
-        }
+        return count($classes) > 0 ? $classes : null;
     }
 
     /**

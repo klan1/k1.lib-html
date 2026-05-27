@@ -13,7 +13,7 @@ namespace k1lib\html;
  */
 class aside extends tag {
 
-    use append_shotcuts;
+    use append_shortcuts;
 
     /**
      * Create an ASIDE html tag with VALUE as data.
