@@ -33,7 +33,7 @@ class link extends tag {
         }
     }
 
-    public function set_value($value, $append = FALSE) {
+    public function set_value($value, $append = FALSE): tag {
         $this->set_attrib("href", $value);
         return $this;
     }

@@ -27,7 +27,7 @@ class iframe extends tag {
         $this->set_id($id);
     }
 
-    public function set_value($value, $append = FALSE) {
+    public function set_value($value, $append = FALSE): tag {
         $this->set_attrib("src", $value);
         return $this;
     }

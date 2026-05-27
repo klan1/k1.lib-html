@@ -1,89 +1,102 @@
 <?php
 
 /**
+ * Central catalog for managing all HTML tag instances.
+ * Provides static methods to track, retrieve, and manage tags throughout the document lifecycle.
+ *
  * @author Alejandro Trujillo J. <https://github.com/j0hnd03>
+ * @package k1lib\html
  */
 
 namespace k1lib\html;
 
-/**
- * Holds all the tags created with the tag Class.
- *
- * @author Alejandro Trujillo J. <https://github.com/j0hnd03>
- */
 class tag_catalog {
 
     /**
-     * @var integer 
+     * Array storing all cataloged tag objects indexed by their unique ID.
+     * @var tag[]
      */
-    static protected $catalog = [];
+    static protected array $catalog = [];
 
     /**
-     * @var array 
+     * Current index counter for assigning unique IDs to new tags.
+     * @var int
      */
-    static protected $index = 0;
+    static protected int $index = 0;
 
     /**
-     * Gets the actual index position.
-     * @return integer
+     * Gets the current index position for the catalog.
+     *
+     * Returns the last assigned index value, which represents how many
+     * tags have been cataloged since the script started.
+     *
+     * @return int The current catalog index
      */
-    static function get_index() {
+    static function get_index(): int {
         return self::$index;
     }
 
     /**
-     * Get a tag Object form catalog using the ID to search on Catalog index
-     * @param integer $index
-     * @return tag|NULL
+     * Retrieves a tag object from the catalog by its index.
+     *
+     * @param int $index The unique tag index to look up
+     * @return tag|null The tag object if found, null otherwise
      */
-    static function get_by_index($index): tag|null {
+    static function get_by_index(int $index): tag|null {
         if (self::index_exist($index)) {
             return self::$catalog[$index];
         } else {
-            return NULL;
+            return null;
         }
     }
 
     /**
-     * Checks if and index exist. If the tag have been decataloged wont be found.
-     * @param integer $index
-     * @return boolean
+     * Checks if a catalog index exists.
+     *
+     * @param int $index The index to check
+     * @return bool True if the index exists and has a tag, false otherwise
      */
-    static function index_exist($index) {
-        if (isset(self::$catalog[$index])) {
-            return TRUE;
-        } else {
-            return FALSE;
-        }
+    static function index_exist(int $index): bool {
+        return isset(self::$catalog[$index]);
     }
 
     /**
-     * Increase the index value and returns the new index value.
-     * @param \k1lib\html\tag $tag_object
-     * @return integer
+     * Increases the catalog index and registers a new tag object.
+     *
+     * @param tag $tag_object The tag object to catalog
+     * @return int The new index value assigned to the tag
      */
-    static function increase(tag $tag_object) {
+    static function increase(tag $tag_object): int {
         self::$index++;
         self::$catalog[self::$index] = $tag_object;
         return self::$index;
     }
 
     /**
-     * Remove the tag Object from the Array catalog, this will disable the 
-     * Object to be found or generated on chain actions.
-     * @param integer|\k1lib\html\tag $tag_index
+     * Removes a tag from the catalog by index or object reference.
+     *
+     * Once decataloged, the tag will no longer be found in search operations
+     * or included in chain generation actions.
+     *
+     * @param int|tag $tag_index The tag index or tag object to decatalog
+     * @return void
      */
-    static function decatalog($tag_index) {
+    static function decatalog(int|tag $tag_index): void {
         if (is_object($tag_index) && method_exists($tag_index, "get_tag_id")) {
             $tag_index = $tag_index->get_tag_id();
         }
         if (isset(self::$catalog[$tag_index])) {
-            //            self::$catalog[$tag_index] = NULL;
             unset(self::$catalog[$tag_index]);
         }
     }
 
-    static function is_cataloged($tag_index) {
+    /**
+     * Checks if a tag object is currently cataloged.
+     *
+     * @param int|tag $tag_index The tag index or tag object to check
+     * @return bool True if the tag is cataloged, false otherwise
+     */
+    static function is_cataloged(int|tag $tag_index): bool {
         if (is_object($tag_index) && method_exists($tag_index, "get_tag_id")) {
             return true;
         } else {
@@ -92,10 +105,11 @@ class tag_catalog {
     }
 
     /**
-     * Returns all the tag Object Catalog Array
-     * @return tag[]
+     * Returns the complete catalog array of all registered tag objects.
+     *
+     * @return tag[] Array of all cataloged tag objects indexed by ID
      */
-    static function get_catalog() {
+    static function get_catalog(): array {
         return self::$catalog;
     }
 }

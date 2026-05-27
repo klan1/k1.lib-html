@@ -35,7 +35,7 @@ class li extends tag {
      * @param string $id
      * @return ul
      */
-    function append_ul($class = NULL, $id = NULL) {
+    function append_ul(string|null $class = NULL, string|null $id = NULL): ul {
         $new = new ul($class, $id);
         $this->append_child($new);
         return $new;
@@ -47,7 +47,7 @@ class li extends tag {
      * @param string $id
      * @return ol
      */
-    function append_ol($class = NULL, $id = NULL) {
+    function append_ol(string|null $class = NULL, string|null $id = NULL): ol {
         $new = new ol($class, $id);
         $this->append_child($new);
         return $new;

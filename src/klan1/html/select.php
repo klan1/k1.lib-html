@@ -42,7 +42,7 @@ class select extends tag {
         return $child_object;
     }
 
-    function set_value($value, $append = FALSE) {
+    function set_value($value, $append = FALSE): tag {
         $selected = $this->get_elements_by_attrib("selected");
         if (!empty($selected)) {
             $selected[0]->remove_attrib("selected");
@@ -51,5 +51,6 @@ class select extends tag {
         if (isset($target_tag[0])) {
             $target_tag[0]->set_attrib("selected", TRUE);
         }
+        return $this;
     }
 }

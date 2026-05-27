@@ -1,40 +1,49 @@
 <?php
 
 /**
+ * Static logging utility for tracking HTML tag operations.
+ * Provides methods to record and retrieve log entries for debugging
+ * and monitoring tag-related actions during document generation.
+ *
  * @author Alejandro Trujillo J. <https://github.com/j0hnd03>
+ * @package k1lib\html
  */
 
 namespace k1lib\html;
 
-/**
- * Static Class to log all the Class tag actions
- *
- * @author Alejandro Trujillo J. <https://github.com/j0hnd03>
- */
 class tag_log {
 
     /**
-     * @var string A simple log, each line is an action.
+     * Accumulated log entries as a single string.
+     * @var string
      */
-    static protected $log;
+    static protected string $log = "";
 
     /**
-     * Return the Log as string
-     * @return string
+     * Returns the log with HTML special characters escaped for safe display.
+     *
+     * @return string The escaped log content
      */
-    static function get_log() {
+    static function get_log(): string {
         return htmlspecialchars(self::$log);
     }
 
-    static function get_log_raw() {
+    /**
+     * Returns the raw unescaped log content.
+     *
+     * @return string The raw log content
+     */
+    static function get_log_raw(): string {
         return self::$log;
     }
 
     /**
-     * Receive 1 action, do not need New Line at end.
-     * @param string $log 
+     * Appends a log entry to the internal log buffer.
+     *
+     * @param string $log The log message to record. Newline is added automatically.
+     * @return void
      */
-    static function log($log) {
+    static function log(string $log): void {
         self::$log .= $log . "\n";
     }
 }

@@ -29,21 +29,21 @@ class img extends tag {
         $this->set_id($id);
     }
 
-    function set_value($value, $append = FALSE) {
+    function set_value($value, $append = FALSE): tag {
         $this->set_attrib("alt", $value, $append);
         return $this;
     }
 
-    function set_src(string $src) {
+    function set_src(string $src): tag {
         $this->set_attrib("src", $src);
         return $this;
     }
 
-    function get_src() {
+    function get_src(): string|false {
         return $this->get_attribute("src");
     }
 
-    function set_alt(string $alt_text, $append = FALSE) {
+    function set_alt(string $alt_text, $append = FALSE): tag {
         $this->set_attrib("alt", $alt_text, $append);
         return $this;
     }
