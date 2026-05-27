@@ -6,6 +6,9 @@
             <file>file:/Users/j0hnd003/Develop/GitHub/server/k1lib-project/k1lib.html/src/klan1/html/bootstrap/menu.php</file>
             <file>file:/Users/j0hnd003/Develop/GitHub/server/k1lib-project/k1lib.html/src/klan1/html/template.php</file>
         </group>
-        <group name="K1.Lib Project"/>
+        <group name="K1.Lib Project">
+            <file>file:/Users/j0hnd003/Develop/GitHub/server/k1lib-project/k1.lib-html/composer.json</file>
+            <file>file:/Users/j0hnd003/Develop/GitHub/server/k1lib-project/k1.lib-html/src/klan1/html/notifications/on_DOM.php</file>
+        </group>
     </open-files>
 </project-private>
