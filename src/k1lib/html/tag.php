@@ -926,9 +926,8 @@ class tag {
                     }
                 }
             }
-        } else {
-            return null;
         }
+        return null;
     }
 
     /**
