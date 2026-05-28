@@ -12,7 +12,7 @@
     },
     "autoload": {
         "psr-4": {
-            "k1lib\\html\\": "src/klan1/html/"
+            "k1lib\\html\\": "src/k1lib/html/"
         }
     },
     "scripts": {
