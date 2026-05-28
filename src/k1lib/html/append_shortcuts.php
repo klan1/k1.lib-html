@@ -105,12 +105,11 @@ trait append_shortcuts {
      * @param string|null $href The URL for the hyperlink
      * @param string|null $label The visible text for the link
      * @param string|null $target The target attribute (_blank, _self, etc.)
-     * @param string|null $alt Alternative text (used as title)
      * @param string|null $class Optional CSS class for the anchor
      * @param string|null $id Optional ID attribute for the anchor
      * @return a The newly created anchor element
      */
-    function append_a(string|null $href = NULL, string|null $label = NULL, string|null $target = NULL, string|null $alt = NULL, string|null $class = NULL, string|null $id = NULL): a {
+    function append_a(string|null $href = NULL, string|null $label = NULL, string|null $target = NULL, string|null $class = NULL, string|null $id = NULL): a {
         $new = new a($href, $label, $target, $class, $id);
         $this->append_child($new);
         return $new;
