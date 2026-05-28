@@ -5,7 +5,7 @@ namespace k1lib\html;
 trait append_shortcuts {
 
     /**
-     * Appends a new div element as a child.
+     * Appends a new div element as a child
      *
      * @param string|null $class Optional CSS class for the div
      * @param string|null $id Optional ID attribute for the div
