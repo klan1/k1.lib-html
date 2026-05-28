@@ -33,6 +33,12 @@ class tag {
     /** @var tag|null Reference to the root document tag */
     static tag|null $root = null;
 
+    /** @var bool */
+    static protected $use_log = FALSE;
+
+    /** @var bool */
+    static protected $debug_tag = false;
+
     /** @var string */
     protected $tag_id = 0;
 
@@ -89,9 +95,6 @@ class tag {
 
     /** @var tag */
     protected tag|null $parent = NULL;
-
-    /** @var bool */
-    static protected $use_log = FALSE;
 
     /** @var tag; */
     protected $this_link = NULL;
@@ -926,7 +929,7 @@ class tag {
         } else {
             return null;
         }
-}
+    }
 
     /**
      * This tries to work as in jQuery $('#id') could work. By now, just simple 1 term query as #myid .myclass mytag
