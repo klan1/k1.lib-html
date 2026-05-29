@@ -823,7 +823,7 @@ class tag {
      */
     public function generate($with_childs = \TRUE, $n_childs = 0): string {
         if (self::$debug_tag) {
-            $this->set_attrib('class_name', __CLASS__);
+            $this->set_attrib('class_name', get_class($this));
         }
 
 
