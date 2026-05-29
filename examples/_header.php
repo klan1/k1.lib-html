@@ -9,6 +9,8 @@
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
+\k1lib\html\tag::debug($_GET['debug'] ?? false);
+
 $components_list = [
     'headings' => 'Heading (h1-h6)',
     'paragraph' => 'Paragraph (p)',
@@ -147,6 +149,9 @@ $next_file = $current_index < count($components_list) - 1 ? array_keys($componen
                 <i class="bi bi-code-square me-2"></i> k1.lib-html
             </a>
             <span class="navbar-text text-white-50 me-auto ms-3"><?= $component_name ?? 'Tag' ?></span>
+            <?php if (\k1lib\html\tag::debug()): ?>
+                <span class="badge bg-warning text-dark me-2">DEBUG</span>
+            <?php endif; ?>
 
             <div class="dropdown">
                 <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown">

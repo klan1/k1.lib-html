@@ -34,6 +34,26 @@ $div->set_value("Hello, k1lib.html!");
 echo $doc->generate();
 ```
 
+## Debug Mode
+
+Enable debug mode to automatically add `class_name` attributes to all generated HTML tags, showing the PHP class name that generated each element:
+
+```php
+// Enable debug mode
+\k1lib\html\tag::debug(true);
+
+// Now all generate() calls will include class_name attribute
+$div = new \k1lib\html\div();
+$div->set_value("Content");
+// Output: <div class_name="k1lib\html\div">Content</div>
+
+// Disable debug mode
+\k1lib\html\tag::debug(false);
+
+// Check current debug state
+$isDebug = \k1lib\html\tag::debug(); // returns bool
+```
+
 ## License
 
 This project is licensed under the Apache-2.0 License.

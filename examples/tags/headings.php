@@ -1,8 +1,6 @@
 <?php
 $component_name = 'Headings';
 require_once __DIR__ . '/../_header.php';
-
-k1lib\html\tag::debug(true);
 ?>
 
 <section class="component-section">
