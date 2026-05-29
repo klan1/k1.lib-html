@@ -99,6 +99,13 @@ class tag {
     /** @var tag; */
     protected $this_link = NULL;
 
+    static function debug(bool|null $mode): bool {
+        if ($mode !== null) {
+            self::$debug_tag = $mode;
+        }
+        return self::$debug_tag;
+    }
+
     /**
      * Constructor with $tag_name and $self_closed options for beginning
      *
@@ -815,6 +822,11 @@ class tag {
      * @return string The generated HTML
      */
     public function generate($with_childs = \TRUE, $n_childs = 0): string {
+        if (self::$debug_tag) {
+            $this->set_attrib('class_name', __CLASS__);
+        }
+
+
         /**
          * Merge the child arrays HEAD, MAIN and TAIL collections
          */
