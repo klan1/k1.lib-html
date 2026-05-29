@@ -823,7 +823,7 @@ class tag {
      */
     public function generate($with_childs = \TRUE, $n_childs = 0): string {
         if (self::$debug_tag) {
-            $this->set_attrib('k1lib-class-name', get_class($this));
+            $this->set_attrib('k1lib-class-name', str_replace('k1app\html', '', get_class($this)));
         }
 
 
